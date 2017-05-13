@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../../css/resetmaingxx.css">
+		<link rel="stylesheet" href="../../../css/gxxmain.css">
+		<link rel="stylesheet" href="../../../css/iuapmobile.um-2.7.0.css">
+		<link rel="stylesheet" href="../../../css/font-icons.css">
+		<link rel="stylesheet" href="../../../css/gxxmain.css">
+		<link rel="stylesheet" href="../../../css/iconfont.css">
+		<link rel="stylesheet" href="../../../css/common.css">
+		<script src="../../../js/summer.js" ></script>
+		<script src="../../../js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+		<script src="../../../js/jquery-2.1.4.min.js" ></script>
+		<script src="../../../js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+		<script type="text/javascript" src="../../../js/knockout-2.2.0.js"></script>
+		<script type="text/javascript" src="../../../js/Frameworks/iuapmobile.frameworks.listview.js"></script>
+	</head>
+	<body>
+		<div class="um-page" id="index" style="background:white">
+			<div id="pageHeader" class="um-header  um-common-header" style="color:#FFFFFF;position: relative;background-image: url('../../../img/logo.png');background-repeat:no-repeat; background-size: 58px 35px;background-position:50% 90%;">
+				<a href="#" onclick="api.closeWin()" class="um-header-left ti-angle-left" style="color:#fff;">关于</a>
+				<h3 style="opacity:0;">标题</h3>
+				<a href="#" onclick="callTell()" class="um-header-right  um-top-common iconfont um-index-dianhua">&#xe601;</a>
+				<a href="#" onclick="getSenderMess()" class="um-header-right iconfont um-index-dianhua">&#xe605;</a>
+			</div>
+
+			<div class="um-content" style="">
+				<div class="tc" style="width:30%;margin:10% auto">
+					<img src="../../../img/logo_guanyu.png" alt="" class="headerimg" style="width:80%;">
+					<p class="f14 version">
+						版本号:1.0.1
+					</p>
+				</div>
+				<div class="um-listview-wrap mt20" id="listview">
+					<ul class="um-list um-list-static f14">
+						<li class="um-listview-row">
+							<div class="clearfix">
+								<div class="um-xs-12">
+									<p>
+										去评分
+									</p>
+								</div>
+							</div>
+
+						</li>
+						<li class="um-listview-row">
+							<div class="clearfix">
+								<div class="um-xs-12">
+									<p>
+										版本更新
+									</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<span id="lastBottom" style="text-align: center;display:none;width: 100%;font-size:12px;color:#7F7F7F">中华人民共和国海关总署</span>
+				</div>
+				<div class="um-listview-row bottom">
+					<a  data-id="liability" href="#" class="f14 liability">使用条款和隐私政策</a>
+					<p class="f12" style="text-align:center;">
+						copyRight©2016中华人民共和国海关总署
+					</p>
+				</div>
+			</div>
+
+		</div>
+		<script src="../../../js/wode/yingyongshezhi/guanyu.js" ></script>
+	</body>
+</html>

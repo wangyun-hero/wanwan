@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../../css/resetmaingxx.css">
+		<link rel="stylesheet" href="../../../css/gxxmain.css">
+		<link rel="stylesheet" href="../../../css/iuapmobile.um-2.7.0.css">
+		<link rel="stylesheet" href="../../../css/font-icons.css">
+		<link rel="stylesheet" href="../../../css/iconfont.css">
+		<link rel="stylesheet" href="../../../css/common.css">
+		<script src="../../../js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+		<script src="../../../js/summer.js" ></script>
+		<script src="../../../js/jquery-2.1.4.min.js" ></script>
+		<script src="../../../js/mobiscroll.custom-3.0.0.min.js" ></script>
+		<script src="../../../js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+		<script type="text/javascript" src="../../../js/jquery-mvalidate.js"></script>
+	</head>
+	<body>
+		<div class="um-page um-bgc-gray">
+			<div id="pageHeader" class="um-header um-common-header" style="color:#FFFFFF;position: relative;background-image: url('../../../img/logo.png');background-repeat:no-repeat; background-size: 58px 35px;background-position:50% 90%;">
+				<a href="#" onclick="gotoWodeInfo()" class="um-header-left ti-angle-left" style="color:#fff;">我的资料 </a>
+				<h3 style="opacity:0;">标题</h3>
+				<a href="#" onclick="callTell()" class="um-header-right  um-top-common iconfont um-index-dianhua">&#xe601;</a>
+				<a href="#" onclick="getSenderMess()" class="um-header-right iconfont um-index-dianhua">&#xe605;</a>
+			</div>
+			<div class="um-content">
+				<form id="editQiyeForm" onsubmit="return false;">
+					<div class="gxx-qiyebangding">
+						<div>
+							<h6 class="gxx-h6">姓名</h6>
+							<div class="pr">
+								<input id="username" type="text" placeholder="" class="form-control" data-required="true" data-descriptions="username"/>
+								<span class="um-input-clear ti-close" onclick="clearTxt(this)"></span>
+							</div>
+
+						</div>
+						<div>
+							<h6 class="gxx-h6">身份认证类型</h6>
+							<div class="pr">
+								<select name="" id="type" class="select form-control" >
+									<option value="1">身份证</option>
+									<option value="2">港澳通行证</option>
+									<option value="3">护照</option>
+									<option value="4">港澳身份证</option>
+								</select>
+								<span class="ti-angle-down select-icon"></span>
+							</div>
+
+						</div>
+						<div>
+							<h6 class="gxx-h6">证件号码</h6>
+							<div class="pr">
+								<input id="idCard" type="text" placeholder="" class="form-control" data-validate="cardId" data-describedby="cardId-description"/>
+								<span class="um-input-clear ti-close" onclick="clearTxt(this)"></span>
+							</div>
+
+						</div>
+						<div class="mt40 btnCon tc">
+							<input type="submit" class="btn btn-blue" value="确定"/>
+						</div>
+					</div>
+				</form>
+			</div>
+			<script src="../../../js/wode/wodeziliao/shenfenyanzheng.js" ></script>
+	</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html style="background:#ffffff">
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../css/resetmaingxx.css">
+		<link rel="stylesheet" href="../../css/iuapmobile.um-2.7.0.css">
+		<link rel="stylesheet" href="../../css/font-icons.css">
+		<link rel="stylesheet" href="../../css/iconfont.css">
+		<link rel="stylesheet" href="../../css/common.css">
+		<script src="../../js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+		<script src="../../js/jquery-2.1.4.min.js" ></script>
+		<script src="../../js/summer.js" ></script>
+		<script src="../../js/doT.min.js" ></script>
+		<script src="../../js/mobiscroll.custom-3.0.0.min.js" ></script>
+		<script src="../../js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+		<script src="../../js/kefuzhongxin/zaixianzixun.js" ></script>
+	</head>
+	<style>
+        .form-control {
+            width: 100%;
+        }
+	</style>
+	<body>
+		<div class="um-page" id="zixun">
+			<div class="um-header um-common-header" id="pageHeader">
+				<a href="#" onclick="api.closeWin()" class="um-header-left ti-angle-left" style="color:#fff;">返回</a>
+				<h3 class="um-common-ht3">在线咨询</h3>
+				<a href="#" onclick="callTell()" class="um-header-right  um-top-common iconfont um-index-dianhua">&#xe601;</a>
+				<a href="#" onclick="getSenderMess()" class="um-header-right iconfont um-index-dianhua">&#xe605;</a>
+			</div>
+			<div class="um-content pl15 mt30">
+				<select class="form-control" id="Type">
+					<script id="selectType" type="text/x-dot-template">
+						{{for(var i=0;i<it.length;i++){}}
+						<option val={{=it[i].type}}>{{=it[i].type}}</option>
+						{{}}}
+					</script>
+				</select>
+
+				<div class="f14 mt20">
+					<span>咨询内容</span>
+					<textarea name="" id="zixunTextAre" class="form-control mt20"></textarea>
+				</div>
+				<div class="btnCon mt40 mb0">
+					<a class="btn" onclick="serviceData()">提 交</a>
+				</div>
+				<div class="f12 tr">
+					<a href="zaixianzixunList.html" style="margin-right: 10px;">查看咨询</a>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>

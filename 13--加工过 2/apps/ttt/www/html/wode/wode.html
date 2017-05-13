@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../css/gxxmain.css">
+		<link rel="stylesheet" href="../../css/iuapmobile.um-2.7.0.css">
+		<link rel="stylesheet" href="../../css/font-icons.css">
+		<link rel="stylesheet" href="../../css/iconfont.css">
+		<link rel="stylesheet" href="../../css/common.css">
+		<link rel="stylesheet" type="text/css" href="../../css/iuapmobile.um.listview-2.7.0.css">
+		<script src="../../js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+		<script src="../../js/summer.js" ></script>
+		<script src="../../js/jquery-2.1.4.min.js" ></script>
+		<script src="../../js/doT.min.js" ></script>
+		<script src="../../js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+		<!-- 	<script src="../../js/knockout-2.2.0.js" ></script> -->
+		<script src="../../js/Frameworks/iuapmobile.frameworks.listview.js" ></script>
+	</head>
+	<body>
+		<div class="um-page" id="index" style="background:#FFFFFF">
+			<!-- top--头部 -->
+			<div class="um-content">
+				<div class="um-wode-a" style="text-align: center;margin-left:-15px; margin-right:-15px;background-image: url('../../img/wode_background.png');background-size:cover;color:#ECE9E9" >
+					<a href="javascript:;" id="goLogin" class="um-white"> <img class="um-circle um-wode-img1"style="margin-top: 13%;" height="55px" width="55px" src="../../img/boy.png">
+					<div style="margin-top:2%;padding-bottom:3%;"class="f14">
+						<p id="usernameMess">
+							用户您好，请登录
+						</p>
+						<p id="userdegree">
+							游客
+						</p>
+					</div> </a>
+				</div>
+
+				<div id="listview">
+					<ul class="gxx-list um-no-active" style="margin-top:0px">
+
+					</ul>
+				</div>
+			</div>
+			<!-- footer--底部 -->
+		</div>
+		<script id="wode" type="text/x-dot-template">
+			{{for(var i=0;i<it.length;i++){}}
+			<li class="um-listview-row um-list-con" data-url="{{=it[i].url}}" data-name="{{=it[i].name}}">
+			<a data-bind="#" class="um-list-item">
+			<div class="um-list-item-media">
+			<img src="{{=it[i].img}}"height="43px" width="43px" >
+			</div>
+			<div class="um-list-item-inner">
+			<div class="um-list-item-body" style="line-height: 26px">
+			<span class="f16">{{=it[i].title}}</span>
+			<span class="f12 ml5" style="color:#a6a6a6;">{{=it[i].cont}}</span>
+			</div>
+			</div> </a>
+			</li>
+			{{}}}
+		</script>
+		<script src="../../js/wode/wode.js"></script>
+	</body>
+</html>

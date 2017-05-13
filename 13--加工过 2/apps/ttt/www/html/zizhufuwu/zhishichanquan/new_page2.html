@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../../css/iuapmobile.um.css">
+		<link rel="stylesheet" href="../../../css/font-icons.css">
+		<script src="../../../js/jquery-2.1.4.min.js" ></script>
+		<script src="../../../js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+		<style>
+			html, body, .um-page {
+				height: 100%;
+				overflow: hidden;
+			}
+		</style>
+		<script>
+			$isWeb = true
+		</script>
+		<script>
+			function $pageReady() {
+				alert("webview ready");
+			}
+
+			$(function() {
+				UM.toast({
+					title : '友情提示：',
+					text : '3秒后消失',
+					duration : 3000
+				});
+				$('a.popBtn').on('click', function() {
+					UM.actionsheet({
+						title : '选择照片',
+						items : ['从图库中选择', '照相'],
+						callbacks : [
+							function() {
+								alert('图库')
+							},
+							function() {
+								alert('照相')
+							}]
+
+					});
+
+				})
+			});
+
+			var data = [{
+				"code" : "TGZT",
+				"subMenus" : [{
+					"navName" : "报关单状态查询",
+					"text" : "baoguandan",
+					"url" : "html/zizhufuwu/tongguanzhuangtai/baoguandanSearch.html",
+				}, {
+					"navName" : "报关单基本信息查询",
+					"text" : "baoguandanjibenxinxi",
+					"url" : "html/zizhufuwu/tongguanzhuangtai/baoguandanInfo.html",
+				}, {
+					"navName" : "修撤单查询",
+					"text" : "xiuchedan",
+					"url" : "html/zizhufuwu/tongguanzhuangtai/xiuchedanSearch.html",
+				}]
+			}, {
+				"code" : "CD", //舱单
+				"subMenus" : [{
+					"navName" : "海空舱单信息查询",
+					"text" : "haikongcangdan",
+					"url" : "html/zizhufuwu/tongguanzhuangtai/haikongSearch.html",
+				}, {
+					"navName" : "公路舱单查询",
+					"text" : "gonglucangdan",
+					"url" : "html/zizhufuwu/cangdanchaxun/gongluInfoSearch.html",
+				}, {
+					"navName" : "公路舱单确报查询",
+					"text" : "gonglucangdan",
+					"url" : "html/zizhufuwu/cangdanchaxun/gongluConfirmSearch.html",
+				}]
+			}, {
+				"code" : "QGCX", //企管查询
+				"subMenus" : [{
+					"navName" : "企业关键信息查询",
+					"text" : "guanjianxinxi",
+					"url" : "html/zizhufuwu/tongguanzhuangtai/haikongSearch.html",
+				}, {
+					"navName" : "企业年报信息查询",
+					"text" : "qiyenianbao",
+					"url" : "html/zizhufuwu/cangdanchaxun/gongluInfoSearch.html",
+				}, {
+					"navName" : "报关差错信息查询",
+					"text" : "baoguanchacuo",
+					"url" : "html/zizhufuwu/cangdanchaxun/gongluConfirmSearch.html",
+				}, {
+					"navName" : "报关企业注册登记申请查询",
+					"text" : "baoguanqiyezhuce",
+					"url" : "html/zizhufuwu/cangdanchaxun/gongluConfirmSearch.html",
+				}, {
+					"navName" : "企业认证申请查询",
+					"text" : "qiyerenzhengshenqing",
+					"url" : "html/zizhufuwu/cangdanchaxun/gongluConfirmSearch.html",
+				}]
+			}]
+
+		</script>
+
+	</head>
+	<body>
+		<div class="um-page" id="">
+			<div class="um-header" >
+				<h3>浮动层</h3>
+			</div>
+			<div class="um-content mt30">
+				<a href="#" class="popBtn btn mt30" data-target="actionsheet">actionsheet</a>
+			</div>
+		</div>
+	</body>
+</html>

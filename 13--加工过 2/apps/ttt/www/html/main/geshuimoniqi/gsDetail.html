@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title>个税模拟</title>
+		<link rel="stylesheet" href="../../../css/iuapmobile.um-2.7.0.css">
+		<link rel="stylesheet" href="../../../css/font-icons.css">
+		<link rel="stylesheet" href="../../../css/iconfont.css">
+		<link rel="stylesheet" href="../../../css/common.css">
+		<link rel="stylesheet" href="../../../css/geshuimoniqi.css" />
+		<script src="../../../js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+        <script src="../../../js/summer.js" ></script>
+        <script src="../../../js/jquery-2.1.4.min.js" ></script>
+        <script src="../../../js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+        <script type="text/javascript" src="../../../js/knockout-2.2.0.js"></script>
+        <script type="text/javascript" src="../../../js/Frameworks/iuapmobile.frameworks.listview.js"></script>
+	</head>
+	<body>
+		<div class="um-page active" id="imitator">
+			<!-- top--头部 -->
+			<div class="um-header um-common-header" >
+				<a href="gsSearch.html" onclick="api.closeWin()" class="um-header-left ti-angle-left  um-white" style="color:#fff;">返回</a>
+				<div id="viewTitle" class="um-common-img" style="width:56px;height:30px;position:absolute;left:50%;right:50%;top:50%;bottom:0;margin-left:-28px;margin-top:-21px;">
+					<img src="../../../img/logo.png" alt="" style="width: 100%;height:auto;">
+				</div>
+				<a href="#" onclick="callTell()" class="um-header-right  um-top-common iconfont um-index-dianhua">&#xe601;</a>
+				<a href="#" onclick="getSenderMess()" class="um-header-right iconfont um-index-dianhua">&#xe605;</a>
+			</div>
+			<div class="um-content">
+				<div class="um-title-con clearfix">
+						<div class="um-xs-12 um-title um-blue">当前计算物品：<span class="goodsname" id="goodsname"></span>
+						<input type="hidden" class="goodsrate_code" id="goodsrate_code">
+						</div>
+						<div class="um-xs-12"><p class="f12 um-gray">计征税款=单位数量*完税价格*税率</p></div>
+				</div>
+				<div class="um-box f14">
+					<div class="um-bf2 vm ">
+						单位数量
+					</div>
+					<div class="um-bf4">
+						<input type="number" placeholder="请输入数量" class="form-control tr goodsnumber require isNum" value="1">
+					</div>
+					<div class="um-bf3">
+						<span class="unitname"></span>
+					</div>
+				</div>
+				<div class="um-box f14">
+					<div class="um-bf2">
+						完税价格
+					</div>
+					<div class="um-bf4">
+						<input type="number" class="form-control tr customsvalue require isNum">
+						<div class="um-gray f12 mt5">
+							或手输入实际价格
+						</div>
+					</div>
+					<div class="um-bf3">
+						<span>元</span>
+					</div>
+				</div>
+				<div class="um-box f14">
+					<div class="um-bf2">
+						税率
+					</div>
+					<div class="um-bf4">
+						<p class="tc rate" style="line-height:39px">0.15</p>
+					</div>
+					<div class="um-bf3"></div>
+				</div>
+				<div class="um-box f14">
+					<div class="um-bf2">
+						计征税款
+					</div>
+					<div class="um-bf4">
+						<p class="tc f18 um-blue taxdues"  style="line-height:39px"></p>
+					</div>
+					<div class="um-bf3">
+						<span>元</span>
+					</div>
+				</div>
+
+				<div class="um-xs-12 f12 um-red  pl15 mt20">
+				友情提示：计征税款仅供参考，请以实际通关……为准
+				</div>
+				<div class="btnCon mt40 mb20">
+					<a class="btn" id='btn-tax-commit'>计算</a>
+				</div>
+		
+			</div>
+			<div class="um-footer">
+                <div class="um-footer">
+                    <div class="um-footerbar">
+                        <a  class="um-footerbar-item addSum">
+                            <i class="icon-add"></i>
+                            <div class="f12 lh1" >
+                            加入汇总
+                            </div> 
+                        </a>
+                        <a id="totalCart" class="um-footerbar-item" data-bind="foreach:dataTotal"> 
+                            <i class="icon-sum pr">
+                                <em class="um-sum-cicle none" data-bind="text:goodsSum"></em>
+                            </i> 
+                            <div class="f12 lh1" >
+                            汇总
+                            </div>
+                        </a>
+                        <a class="um-footerbar-item" id="editTotalCart">
+                            <i class="icon-edit"></i>
+                            <div class="f12 lh1" >
+                            汇总编辑
+                            </div> 
+                        </a>
+                        </a>
+                    </div>
+                </div>
+            </div>
+		</div>
+	</body>
+	<script src="../../../js/main/geshuimoniqi/gsMain.js"></script> 
+</html>

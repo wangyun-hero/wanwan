@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title> </title>
+		<link rel="stylesheet" href="../../../css/iuapmobile.um-2.7.0.css">
+		<link rel="stylesheet" href="../../../css/font-icons.css">
+		
+		<script src="../../../js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+		<script src="../../../js/jquery-2.1.4.min.js" ></script>
+		<script src="../../../js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+
+		<link rel="stylesheet" href="../../../css/popover.css">
+		<style>
+			.um-popover .btn {
+				font-size: 14px;
+			}
+			.um-popover .btn img {
+				margin-right: 8px;
+				width: 20px;
+				height: 20px;
+			}
+		</style>
+		<style type="text/css" >
+			.nav-link {
+				float: left;
+				position: relative;
+				margin-top: -8px;
+				padding: 0 14px;
+				line-height: 34px;
+				font-size: 10px;
+				font-weight: bold;
+				color: #555;
+				text-decoration: none;
+				text-shadow: 0 1px white;
+			}
+
+			.nav-counter {
+				position: absolute;
+				top: -1px;
+				right: 1px;
+				min-width: 8px;
+				height: 20px;
+				line-height: 20px;
+				margin-top: -11px;
+				padding: 0 6px;
+				font-weight: normal;
+				color: white;
+				text-align: center;
+				text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+				background: #e23442;
+				border: 1px solid #911f28;
+				border-radius: 11px;
+				background-image: -webkit-linear-gradient(top, #e8616c, #dd202f);
+				background-image: -moz-linear-gradient(top, #e8616c, #dd202f);
+				background-image: -o-linear-gradient(top, #e8616c, #dd202f);
+				background-image: linear-gradient(to bottom, #e8616c, #dd202f);
+				-webkit-box-shadow: inset 0 0 1px 1px rgba(255, 255, 255, 0.1), 0 1px rgba(0, 0, 0, 0.12);
+				box-shadow: inset 0 0 1px 1px rgba(255, 255, 255, 0.1), 0 1px rgba(0, 0, 0, 0.12);
+			}
+		</style>
+		<script src="../../../js/popover.js" ></script>
+
+		<script type="text/javascript" src="../../../js/knockout-2.2.0.js"></script>
+		<script type="text/javascript" src="../../../js/Frameworks/iuapmobile.frameworks.listview.js"></script>
+		<script>
+			function $pageReady() {
+
+			}
+
+			$(function() {
+
+				$(".um-header-right").popover({
+					content : document.getElementById("temp").innerHTML,
+					width : 140,
+					animation : "pop",
+					delay : {
+						show : 100,
+						hide : 100
+					}
+				});
+			});
+		</script>
+
+	</head>
+	<body>
+		<div class="um-page">
+			<div class="um-header">
+				<h3>移动应用</h3>
+
+				<a href="#" class="um-header-right ti-menu mr5" data-placement="bottom-left"></a>
+
+			</div>
+
+			<div class="um-content">
+				<div class="none" id="temp">
+					<ul class="um-list um-list-corner">
+						<li>
+							<a href="../../../html/appEdit/addApp.html" class="btn um-no-icon"><img src="../../../img/conversation_options_transferfiles.png" alt="">应用订阅</a>
+						</li>
+						<li>
+							<a href="../../../html/appEdit/lessApp.html" class="btn um-no-icon"><img src="../../../img/conversation_facetoface_qr.png" alt="">应用取消</a>
+						</li>
+					</ul>
+				</div>
+
+				<!-- <div class="um-grid"  data-bind="foreach:data" id="applistview" >
+					<div class="um-grid-row tc um-border-bottom" data-bind="foreach:spanList">
+						<div class="um-border-right um-bgc-white">
+							<a data-bind="attr:{href:srcPath}" class="nav-link"> 
+								<img data-bind="attr:{src:imgPath}"  width=40 class="um-img-responsive" alt=""> 
+								<span class="nav-counter" data-bind="text:msgNum,visible:msgNum>0"></span>
+								<div class="f12 mt5">
+									<span data-bind="text:name"></span>
+								</div>
+						 	</a>
+						</div>
+					</div>
+				</div> -->
+				
+				<div class="um-nav" id="applistview">
+					<div class="um-nav-inner" data-bind="foreach:data">
+						<div class="um-grid">
+							<div class="um-grid-row tc">
+								<a class="um-circle um-black" data-bind="attr:{'href':srcPath}"> <img src="" data-bind="attr:{'src': imgPath}" width=40 class="um-img-responsive" alt="" >
+								<div class="f12 mt5 ml5 mr5 h40 " width=200 >
+									<font data-bind="text: name"></font>
+								</div> </a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<script src="../../../js/main/appTab.js" type="text/javascript" charset="utf-8"></script>
+				<script>
+					$(function() {
+
+						//Knockout绑定
+						var ViewModel = function() {
+
+						};
+
+						var jsonArray = loadDataForAppIndex();
+						//为应用页获取已开通的应用
+						//alert("获取到了：  " + jsonArray);
+						var viewModel = new ViewModel();
+						viewModel.data = ko.observableArray(jsonArray);
+						ko.applyBindings(viewModel);
+
+						//构造控件实例
+						var listview = UM.listview('#applistview');
+
+						//添加控件方法
+						listview.on('pullDown', function(sender) {
+							//这是可以编写列表下拉加载逻辑，参数sender即为当前列表实例对象
+							/* var row = {'name':'中国兵器装备集团公司','appCode':'000000000000','degrate':'待审核','imgPath':'1,500','currency':'$','order_date':'2015-01-01','delivery_date':'2015-01-02','contact_name':'小明','contact_tel':'130********','if_store':false, 'memo':'记得及时发货'};
+							 viewModel.data.unshift(row);*/
+							sender.refresh();
+						});
+						listview.on('pullUp', function(sender) {
+							//这是可以编写列表上拉刷新逻辑，参数sender即为当前列表实例对象
+							/* var row = {'name':'宝钢集团有限公司','appCode':'000000000006','degrate':'待审核','imgPath':'2,500','currency':'$','order_date':'2015-01-01','delivery_date':'2015-01-02','contact_name':'小明','contact_tel':'130********','if_store':false, 'memo':'记得及时发货'};
+							 viewModel.data.push(row); */
+							sender.refresh();
+						});
+						listview.on('itemDelete', function(sender, args) {
+							//这是可以编写行删除逻辑，参数sender即为当前列表实例对象，args对象有2个属性，即rowIndex(行索引)和$target(目标行的jquery对象)
+							args.$target.slideUp(500, function() {
+								var item = viewModel.data()[args.rowIndex];
+								//viewModel.data.remove(item);
+								alert("确认要删除吗？");
+							});
+						});
+						listview.on('itemClick', function(sender, args) {
+							//这里可以处理行点击事件，参数sender即为当前列表实例对象，args对象有2个属性，即rowIndex(行索引)和$target(目标行的jquery对象)
+							alert('您点击了列表第' + (args.rowIndex + 1) + "行！");
+
+						});
+						listview.on('itemSwipeLeft', function(sender, args) {
+							//这里可以处理行左滑事件，参数sender即为当前列表实例对象，args对象有2个属性，即rowIndex(行索引)和$target(目标行的jquery对象)
+							sender.showItemMenu(args.$target);
+
+						});
+						listview.on('tapHold', function() {
+							//这里可以处理长按事件
+							//console.log('您长按了列表！');
+						});
+					});
+
+				</script>
+			</div>
+
+			<div class="um-footer">
+
+			</div>
+		</div>
+	</body>
+</html>

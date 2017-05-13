@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../../css/resetmaingxx.css">
+		<link rel="stylesheet" href="../../../css/iuapmobile.um-2.7.0.css">
+		<link rel="stylesheet" href="../../../css/font-icons.css">
+		<link rel="stylesheet" href="../../../css/iconfont.css">
+		<link rel="stylesheet" href="../../../css/common.css">
+		<link rel="stylesheet" type="text/css" href="../../../css/iuapmobile.um.listview-2.7.0.css">
+		<link rel="stylesheet" type="text/css" href="../../../css/iuapmobile.um.listview.css">
+
+		<style>
+			.msg-info {
+				position: relative;
+			}
+			.msg-info .um-badge {
+				position: absolute;
+				right: -10px;
+				font-size: 12px;
+			}
+			.msg-header {
+				width: 40px;
+				height: 40px;
+				line-height: 40px;
+				background: blue;
+				border-radius: 50%;
+				text-align: center;
+				color: white;
+			}
+
+		</style>
+
+		<script src="../../../js/summer.js" ></script>
+		<script src="../../../js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+		<script src="../../../js/jquery-2.1.4.min.js" ></script>
+		<script src="../../../js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+		<script type="text/javascript" src="../../../js/knockout-2.2.0.js"></script>
+		<script type="text/javascript" src="../../../js/Frameworks/iuapmobile.frameworks.listview.js"></script>
+	</head>
+
+	<div class="um-page" id="index">
+		<div class="um-header um-common-header" >
+				<a href="#" onclick="api.closeWin()" class="um-header-left ti-angle-left" style="color:#fff;">返回</a>
+				<div id="viewTitle" class="um-common-img maindiv">
+					<img src="../../../img/logo.png" alt="" class="headerimg">
+				</div>
+				<a href="#" onclick="callTell()" class="um-header-right  um-top-common iconfont" style="color:#fff;line-height:44px;">&#xe601</a>
+				<a href="#" onclick="getSenderMess()" class="um-header-right iconfont" style="color:#fff;line-height:44px;">&#xe605;</a>
+		</div>
+
+		<div class="um-content" style="background-color: white">
+		    <br>
+			<div class="um-listview-wrap" id="listview">
+				<ul class="um-list um-no-active" data-bind="foreach: data">
+					<li class="um-listview-row">
+						<a href="#" class="um-list-item um-swipe-action um-no-icon">
+						<div class="um-swipe-btns">
+							<span class="um-swipe-btn um-delete">删除</span>
+						</div>
+						<div class="um-list-item-media msg-info">
+							<img alt="" data-bind="attr:{'src': img}" width=50>
+							<span class="um-badge" data-bind="text:msgNum,visible:msgNum>0"></span>
+						</div>
+						<div class="um-list-item-inner">
+							<div class="um-list-item-body">
+								<h4 class="um-media-heading fb f16 um-text-overflow" data-bind="text:title"></h4>
+								<p class="um-gray f14 um-text-overflow" data-bind="text:content"></p>
+							</div>
+							<!-- <div class="pr10">
+							<span class="um-gray f12" data-bind="text:lastTime"></span>
+							</div> -->
+						</div> </a>
+					</li>
+				</ul>
+			</div>
+
+			<input type="hidden" id="totalPageNum" value="1"/>
+			<script type="text/javascript" src="../../../js/main/xiaoxiModelTypeList.js"></script>
+		</div>
+	</div>
+	</body>
+
+</html>

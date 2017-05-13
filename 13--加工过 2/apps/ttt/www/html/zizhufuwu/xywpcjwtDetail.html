@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title>行邮物品常见问题</title>
+		<link rel="stylesheet" href="../../css/resetmaingxx.css">
+		<link rel="stylesheet" href="../../css/iuapmobile.um-2.7.0.css">
+		<link rel="stylesheet" href="../../css/font-icons.css">
+		<link rel="stylesheet" href="../../css/iconfont.css">
+		<link rel="stylesheet" href="../../css/common.css">
+		<script src="../../js/summer.js" ></script>
+		<script src="../../js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+		<script src="../../js/jquery-2.1.4.min.js" ></script>
+		<script src="../../js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+		<script src="../../js/zizhufuwu/xywpcjwtDetail.js"></script>
+	</head>
+	<body>
+		<div class="um-page" style="background:#FFFFFF">
+			<div id="pageHeader" class="um-header  um-common-header" style="color:#FFFFFF;position: relative;background-image: url('../../img/logo.png');background-repeat:no-repeat; background-size: 58px 35px;background-position:50% 90%;">
+				<a href="#" onclick="api.closeWin()" class="um-header-left ti-angle-left" style="color:#fff;">常见问题</a>
+				<!-- <div id="viewTitle" class="um-common-img maindiv">
+					<img src="../../img/logo.png" alt="" class="headerimg">
+				</div> -->
+				<h3 style="opacity:0;">标题</h3>
+				<a href="#" onclick="callTell()" class="um-header-right  um-top-common iconfont um-index-dianhua">&#xe601;</a>
+				<a href="#" onclick="getSenderMess()" class="um-header-right iconfont um-index-dianhua">&#xe605;</a>
+			</div>
+
+			<div class="um-content gxx-content">
+			<div class="cicle tr" id="more">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			   	<h4 class="um-common-newh4 f17" id="requestV" style="margin-top:48px"></h4>
+				<p class="um-common-p" id="replyV" style="font-size:14px"></p>
+			</div>
+		</div>
+			<div class="moreBg none">
+		<div style="height:100%"></div>
+		<div class="tc f14" id="saveList">
+			<ul class="um-list um-list-static">
+				<li onclick="myConnetions1('ZCFG',this.name)">收藏</li>
+				<li>微信好友</li>
+				<li>朋友圈</li>
+				<li>QQ</li>
+				<li>QQ空间</li>
+				<li>新浪微博</li>
+			</ul>
+			<ul class="um-list um-list-static">
+				<li class="um-red" id="cancle">取消</li>
+			</ul>
+		</div>
+	</div>
+	</body>
+</html>
+<script>
+		$(function() {
+			$("#more").click(function() {
+				$(".moreBg").removeClass("none");
+				var H = $('#saveList').height();
+				$("#saveList").css("margin-top", -H - 10 + 'px')
+			});
+			$("#cancle").click(function() {
+				$("#saveList").css("margin-top", 0).delay(500);
+				setTimeout(function() {
+					$(".moreBg").addClass("none");
+				}, 500);
+
+			});
+
+		});
+		function myConnetions1(type, id) {
+			alert("收藏成功");
+			$("#saveList").css("margin-top", 0).delay(500);
+			setTimeout(function() {
+				$(".moreBg").addClass("none");
+			}, 500);
+		}
+	</script>

@@ -1,0 +1,64 @@
+//
+//  WYPrefixHeader.pch
+//  TemplateProject
+//
+//  Created by 王云 on 17/5/10.
+//  Copyright © 2017年 Yonyou. All rights reserved.
+//
+
+// #ifdef __OBJC__ 保证头文件的引用, 只引用到OC代码中
+// 为什么需要导入UIKit头文件: 以前的代码, 默认是有PCH的. 因此这里导入, 其他类就不需要导入了. 而Xcode6以后, 取消PCH, 就有可能使用旧的第三方类库时报错
+#ifdef __OBJC__
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+//#import "HeadFileMacro.h"
+
+#import "ThirdMacros.h"
+#import "SystemMacro.h"
+#import "URLMacro.h"
+#import "DeviceMacro.h"
+#import "CommUtls.h"
+#import "CIUserManagerShared.h"
+
+/** 常量值*/
+//#import "WYConst.h"
+
+
+//#import <YYModel.h>
+#import "Masonry.h"
+#import "SVProgressHUD.h"
+#import "SDCycleScrollView.h"
+//#import <UIImageView+WebCache.h>
+//#import <MJRefresh.h>
+
+
+
+/** 分类*/
+//#import "UIView+HMCategory.h"
+#import "UIBarButtonItem+HMCategory.h"
+#import "UIColor+Addition.h"
+#import "GVUserDefaults+Properties.h"
+//#import "NSString+HMCategory.h"
+
+
+
+
+/** 颜色宏定义*/
+
+#import "UIMacro.h"
+
+/** 通知中心宏定义*/
+#define HMNotificationCenter [NSNotificationCenter defaultCenter]
+
+
+/** NSLog 输出宏*/
+#ifdef DEBUG
+#define NSLog(FORMAT, ...) fprintf(stderr,"%s %s:%d\t%s\n",__TIME__,[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#else
+#define NSLog(...)
+#endif
+
+
+
+#endif

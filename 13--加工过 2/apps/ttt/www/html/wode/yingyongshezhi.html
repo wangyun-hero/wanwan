@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../css/resetmaingxx.css">
+		<link rel="stylesheet" href="../../css/iuapmobile.um-2.7.0.css">
+		<link rel="stylesheet" href="../../css/font-icons.css">
+		<link rel="stylesheet" href="../../css/gxxmain.css">
+		<link rel="stylesheet" href="../../css/iconfont.css">
+		<link rel="stylesheet" href="../../css/common.css">
+		<link rel="stylesheet" type="text/css" href="../../css/iuapmobile.um.listview.css">
+		<script src="../../js/summer.js" ></script>
+		<script src="../../js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+		<script src="../../js/jquery-2.1.4.min.js" ></script>
+		<script src="../../js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+		<script type="text/javascript" src="../../js/knockout-2.2.0.js"></script>
+		<script type="text/javascript" src="../../js/Frameworks/iuapmobile.frameworks.listview.js"></script>
+	</head>
+	<style>
+		.gxx-list-item {
+			padding-left: 8px !important;
+		}
+	</style>
+	<body>
+		<div class="um-page um-bgc-gray" id="index" style="background:white">
+			<div id="pageHeader" class="um-header  um-common-header um-white">
+				<a href="#" onclick="api.closeWin()" class="um-header-left ti-angle-left" style="color:#fff">返回</a>
+				<h3>我的设置</h3>
+				<a href="#" onclick="callTell()" class="um-header-right  um-top-common iconfont um-index-dianhua">&#xe601;</a>
+				<a href="#" onclick="getSenderMess()" class="um-header-right iconfont um-index-dianhua">&#xe605;</a>
+			</div>
+
+			<div class="um-content">
+				<div class="um-row">
+					<div class="um-list f14" id='yingyongSetting' style="margin-top:20px">
+						<div class="um-list-item">
+							<div class="um-list-item-inner">
+								<div class="um-list-item-body">
+									消息通知
+								</div>
+								<div class="um-list-item-right">
+									<label class="um-switch1">
+										<input type="checkbox" value="on" checked="checked">
+										<div class="um-track" style="height:28px">
+											<div class="um-handle" style="height:26px;top:0;left:5px;"></div>
+										</div> </label>
+								</div>
+							</div>
+						</div>
+						<a href="#"  data-id='qingchuhuancun' class="um-list-item">
+						<div class="um-list-item-inner">
+							<div class="um-list-item-body">
+								清除缓存
+							</div>
+							<div class="um-list-item-right">
+								<span class="um-gray mr15"></span>
+							</div>
+						</div> </a>
+						<a href="#"  data-id='yijianfankui' class="um-list-item">
+						<div class="um-list-item-inner">
+							<div class="um-list-item-body">
+								意见反馈
+							</div>
+							<div class="um-list-item-right">
+								<span class="um-gray mr15"></span>
+							</div>
+						</div> </a>
+						<a href="#" data-id='guanyu' class="um-list-item">
+						<div class="um-list-item-inner">
+							<div class="um-list-item-body">
+								关于
+							</div>
+							<div class="um-list-item-right">
+								<span class="um-gray mr15"></span>
+							</div>
+						</div> </a>
+						<a href="#" id="tuichudenglu" data-id='tuichudenglu' class="um-list-item">
+						<div class="um-list-item-inner">
+							<div class="um-list-item-body">
+								退出当前登录
+							</div>
+							<div class="um-list-item-right">
+								<span class="um-gray mr15"></span>
+							</div>
+						</div> </a>
+					</div>
+				</div>
+			</div>
+			<script src="../../js/wode/clearSqliteData.js" ></script>
+			<script src="../../js/wode/yingyongshezhi.js" ></script>
+	</body>
+</html>

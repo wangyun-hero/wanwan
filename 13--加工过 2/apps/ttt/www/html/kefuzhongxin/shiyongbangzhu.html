@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html class="um-win">
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../css/gxxmain.css">
+		<link rel="stylesheet" href="../../css/resetmaingxx.css">
+		<link rel="stylesheet" href="../../css/iuapmobile.um-2.7.0.css">
+		<link rel="stylesheet" href="../../css/font-icons.css">
+		<link rel="stylesheet" href="../../css/iconfont.css">
+		<link rel="stylesheet" href="../../css/common.css">
+		<link rel="stylesheet" href="../../css/iuapmobile.um.listview-2.7.0.css">
+		<script src="../../js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+		<script src="../../js/summer.js" ></script>
+		<script src="../../js/jquery-2.1.4.min.js" ></script>
+		<script src="../../js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+		<script src="../../js/knockout-2.2.0.js" ></script>
+		<script src="../../js/Frameworks/iuapmobile.frameworks.listview.js" ></script>
+	</head>
+	<body>
+		<div class="um-page" id="index">
+			<div id="pageHeader" class="um-header  um-common-header">
+				<a href="#" onclick="api.closeWin()" class="um-header-left ti-angle-left" style="color:#fff;">返回</a>
+				<h3 class="um-white">APP使用帮助</h3>
+					<a href="#" onclick="callTell()" class="um-header-right  um-top-common iconfont um-index-dianhua">&#xe601;</a>
+					<a href="#" onclick="getSenderMess()" class="um-header-right iconfont um-index-dianhua">&#xe605;</a>
+			</div>
+
+			<div class="um-content none" style="background-color: white">
+				<div class="um-input-search">
+					<form onsubmit="return false;" style="width:100%">
+						<input type="search" id="searchValue" class=" form-control " placeholder="搜索" style="width:100%;">
+						<span class="um-input-clear ti-close" onclick="clearTxt()"></span>
+					</form>
+				</div>
+				<div class="um-listview-wrap" id="listview">
+					<ul class="um-list um-no-active" data-bind="foreach:data" style="margin:-1px 15px 0">
+						<li class="um-listview-row">
+							<a class="um-list-item um-swipe-action um-no-icon" style="padding-left:0">
+							<div class="um-list-item-inner">
+								<div class="um-list-item-body">
+									<div class="clearfix f14">
+										<div class="um-xs-12 tl" style="width:100%;">
+											<span data-bind="text:no" class="um-black"></span>
+											<span data-bind="text:title"></span>
+										</div>
+									</div>
+									<div class="clearfix mt5 f14" style="display: none" id="" data-bind="attr:{'id': id}">
+										<div class="um-xs-12 tl" style="width:100%;">
+											<span data-bind="text:content" class="um-gray f12"></span>
+										</div>
+									</div>
+								</div>
+							</div> </a>
+						</li>
+					</ul>
+					<span id="lastBottom" style="text-align: center;display:none;width: 100%;color:#7F7F7F;font-size:12px">中华人民共和国海关总署</span>
+				</div>
+				<script src="../../js/kefuzhongxin/shiyongbangzhu.js" ></script>
+			</div>
+		</div>
+	</body>
+</html>

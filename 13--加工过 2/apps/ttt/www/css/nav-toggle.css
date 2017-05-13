@@ -1,0 +1,68 @@
+/* nav */
+/*
+.nav-open .nav ul {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  z-index: 1;
+  opacity: 1;
+}
+.nav-open .nav-toggle {
+  box-shadow: none;
+  z-index: 1;
+}
+.nav-open .nav-toggle:before {
+  width: 1500px;
+  height: 1500px;
+  background-color: rgb(255, 255, 228);;
+}
+
+.nav-toggle {
+    z-index: 2;
+    border-radius: 50%;
+    cursor: pointer;
+    -webkit-transition: all ease-out 0.66s;
+    transition: all ease-out 0.66s;
+    
+}
+.nav-toggle:before {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  -webkit-transition: all ease-out 0.3s;
+     transition: all ease-out 0.3s;
+}
+
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.nav ul {
+   -webkit-transition: all ease-out 0.4s;
+     transition: all ease-out 0.4s;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  opacity: 0;
+  width: 100%;
+}
+.nav li a {
+  display: block;
+  padding: 15px 0;
+  text-align: center;
+  color: #000;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+*/
+
+
+

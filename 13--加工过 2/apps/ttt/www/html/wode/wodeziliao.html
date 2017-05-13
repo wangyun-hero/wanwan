@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<meta name = "format-detection" content = "telephone=no">
+		<title>我的资料</title>
+		<link rel="stylesheet" href="../../css/resetmaingxx.css">
+		<link rel="stylesheet" href="../../css/gxxmain.css">
+		<link rel="stylesheet" href="../../css/iuapmobile.um-2.7.0.css">
+		<link rel="stylesheet" href="../../css/font-icons.css">
+		<link rel="stylesheet" href="../../css/iconfont.css">
+		<link rel="stylesheet" href="../../css/common.css">
+		<script src="../../js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+		<script src="../../js/summer.js" ></script>
+		<script src="../../js/jquery-2.1.4.min.js" ></script>
+		<script src="../../js/mobiscroll.custom-3.0.0.min.js" ></script>
+		<script src="../../js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+	</head>
+	<style>
+		#page1 .um-xs-5, #page1 .um-xs-7, #page2 .um-xs-12, #page3 .um-xs-5, #page3 .um-xs-7 {
+			padding-left: 0;
+			padding-right: 0;
+		}
+		#page2 .um-list-item-body {
+			padding-right: 10px !important;
+		}
+		#page2 input {
+			border: none;
+			outline: none;
+			padding: 5px 0;
+		}
+		#page2 .um-xs-12 input[type='search'], #page2 .um-xs-12 input[type='text'] {
+			width: 94%;
+		}
+		#page2 .radio:after {
+			font-family: 'themify';
+			content: '\e64c';
+			font-size: 14px;
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			right: 0;
+			opacity: 0;
+			color: #004593;
+		}
+		#page2 .radio.active:after {
+			opacity: 1;
+		}
+		.um-list {
+			margin-top: 20px;
+		}
+		#page2 .select-icon {
+			top: 6px;
+		}
+	</style>
+	<body>
+		<div class="um-page active um-bgc-gray" id='page1'>
+			<div id="pageHeader1" class="um-header um-common-header um-white">
+				<a href="javascript:;" onclick="saveUserMess()" class="um-header-left ti-angle-left"style="color: #fff">返回</a>
+				<h3>我的资料</h3>
+				<a href="javascript:;" onclick="callTell()" class="um-header-right  um-top-common iconfont um-index-dianhua">&#xe601;</a>
+				<a href="javascript:;" onclick="getSenderMess()" class="um-header-right iconfont um-index-dianhua">&#xe605;</a>
+			</div>
+			<div class="um-content" id="wodeziliao">
+				<div class="um-row">
+					<ul class="um-list f14 baseInfo">
+						<li>
+							<div class="um-list-item">
+								<div class="um-list-item-inner">
+									<div class="um-list-item-body">
+										<div class="clearfix">
+											<div class="um-xs-5 tl um-text-overflow">
+												<span style="line-height:48px">头像</span>
+											</div>
+											<div class="um-xs-7 tr">
+												<img id="photoMess" src="../../img/boy.png" alt="" style="width:45px;border-radius:50%;"/>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<a class="um-list-item">
+							<div class="um-list-item-inner">
+								<div class="um-list-item-body">
+									<div class="clearfix">
+										<div class="um-xs-5 tl um-text-overflow">
+											<span>帐号</span>
+										</div>
+										<div class="um-xs-7 tr um-text-overflow um-gray">
+											<span class='USER_ACCOUNT'></span>
+										</div>
+									</div>
+								</div>
+							</div> </a>
+						</li>
+						<li>
+							<a class="um-list-item" data-type='userName'>
+							<div class="um-list-item-inner">
+								<div class="um-list-item-body">
+									<div class="clearfix">
+										<div class="um-xs-5 tl um-text-overflow">
+											<span>昵称</span>
+										</div>
+										<div class="um-xs-7 tr um-text-overflow um-gray">
+											<span class='USER_USERNAME'></span>
+										</div>
+									</div>
+								</div>
+							</div> </a>
+						</li>
+						<li>
+							<a class="um-list-item" data-type='sex'>
+							<div class="um-list-item-inner">
+								<div class="um-list-item-body">
+									<div class="clearfix">
+										<div class="um-xs-5 tl um-text-overflow">
+											<span>性别</span>
+										</div>
+										<div class="um-xs-7 tr um-text-overflow um-gray">
+											<span class="USER_SEX"></span>
+										</div>
+									</div>
+								</div>
+							</div> </a>
+						</li>
+						<li>
+							<a class="um-list-item" data-type='zone'>
+							<div class="um-list-item-inner">
+								<div class="um-list-item-body">
+									<div class="clearfix">
+										<div class="um-xs-5 tl um-text-overflow">
+											<span>地区</span>
+										</div>
+										<div class="um-xs-7 tr um-text-overflow um-gray">
+											<span class="USER_AREA"></span>
+										</div>
+									</div>
+								</div>
+							</div> </a>
+						</li>
+						<li>
+							<a class="um-list-item" data-type='brithDay'>
+							<div class="um-list-item-inner">
+								<div class="um-list-item-body">
+									<div class="clearfix">
+										<div class="um-xs-5 tl um-text-overflow">
+											<span>出生日期</span>
+										</div>
+										<div class="um-xs-7 tr um-text-overflow um-gray">
+											<span class='USER_BIRTHDAY'></span>
+										</div>
+									</div>
+								</div>
+							</div> </a>
+						</li>
+
+					</ul>
+					<ul class="um-list f14 baseInfo">
+						<li>
+							<a class="um-list-item" data-type="tell">
+							<div class="um-list-item-inner">
+								<div class="um-list-item-body">
+									<div class="clearfix">
+										<div class="um-xs-5 tl um-text-overflow">
+											<span>手机</span>
+										</div>
+										<div class="um-xs-7 tr um-text-overflow um-gray">
+											<span class="USER_TEL"></span>
+										</div>
+									</div>
+								</div>
+							</div> </a>
+						</li>
+						<li>
+							<a class="um-list-item" data-type='mail'>
+							<div class="um-list-item-inner">
+								<div class="um-list-item-body">
+									<div class="clearfix">
+										<div class="um-xs-5 tl um-text-overflow">
+											<span>邮箱</span>
+										</div>
+										<div class="um-xs-7 tr um-text-overflow um-gray">
+											<span class="USER_MAIL"></span>
+										</div>
+									</div>
+								</div>
+							</div> </a>
+						</li>
+
+					</ul>
+					<ul class="um-list f14">
+						<li onclick="toPage('#page3')">
+							<a class="um-list-item" data-type='password'>
+							<div class="um-list-item-inner">
+								<div class="um-list-item-body">
+									<div class="clearfix">
+										<div class="um-xs-5 tl um-text-overflow">
+											<span>安全中心</span>
+										</div>
+									</div>
+								</div>
+							</div> </a>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+		<!-- edit -->
+		<div class="um-page" style="background:#f2f2f2" id='page2'>
+			<div id="pageHeader2" class="um-header um-common-header um-white">
+				<a href="#" id="goBack" class="um-header-left ti-angle-left" style="color:#fff;">返回</a>
+				<h3>标题</h3>
+				<a href="#" onclick="callTell()" class="um-header-right  um-top-common iconfont um-index-dianhua">&#xe601;</a>
+				<a href="#" onclick="getSenderMess()" class="um-header-right iconfont um-index-dianhua">&#xe605;</a>
+			</div>
+			<div class="um-content list-block f12" id="wodeziliaoEdit">
+				<div class="um-row">
+					<ul class="um-list none" id="userNameCon">
+						<li>
+							<div class="um-list-item">
+								<div class="um-list-item-inner">
+									<div class="um-list-item-body">
+										<div class="clearfix">
+											<div class="um-xs-12 um-text-overflow um-gray">
+												<input type="text" autofocus="autofocus" class='USER_USERNAME form-control'/>
+												<span class="um-input-clear ti-close" onclick="clearTxt(this)"></span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+
+					<ul class="um-list none" id="sexCon">
+						<li>
+							<div class="um-list-item">
+								<div class="um-list-item-inner">
+									<div class="um-list-item-body">
+										<div class="um-xs-12 um-text-overflow">
+											<label for="boy" class="radio sex"> 男
+												<input type="radio" name='sex' value="1" id='boy' class="op0"/>
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						<li>
+							<div class="um-list-item">
+								<div class="um-list-item-inner">
+									<div class="um-list-item-body">
+										<div class="um-xs-12 um-text-overflow">
+											<label for="girl" class="radio sex"> 女
+												<input type="radio" name='sex' value="0" id='girl' class="op0 radio"/>
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<ul class="um-list none" id="zoneCon">
+						<li>
+							<div class="um-list-item">
+								<div class="um-list-item-inner">
+									<div class="um-list-item-body">
+										<div class="clearfix">
+											<div class="um-xs-12 um-text-overflow um-gray">
+												<select class="zone" name="zone" id="zone" style="border:none;background:white;width:100%;">
+													<option value="北京">北京市</option>
+													<option value="浙江省">浙江省</option>
+													<option value="天津市">天津市</option>
+													<option value="安徽省">安徽省</option>
+													<option value="上海市">上海市</option>
+													<option value="福建省">福建省</option>
+													<option value="重庆市">重庆市</option>
+													<option value="江西省">江西省</option>
+													<option value="山东省">山东省</option>
+													<option value="河南省">河南省</option>
+													<option value="湖北省">湖北省</option>
+													<option value="湖南省">湖南省</option>
+													<option value="广东省">广东省</option>
+													<option value="海南省">海南省</option>
+													<option value="山西省">山西省</option>
+													<option value="青海省">青海省</option>
+													<option value="江苏省">江苏省</option>
+													<option value="辽宁省">辽宁省</option>
+													<option value="吉林省">吉林省</option>
+													<option value="台湾省">台湾省</option>
+													<option value="河北省">河北省</option>
+													<option value="贵州省">贵州省</option>
+													<option value="四川省">四川省</option>
+													<option value="云南省">云南省</option>
+													<option value="陕西省">陕西省</option>
+													<option value="甘肃省">甘肃省</option>
+													<option value="黑龙江省">黑龙江省</option>
+													<option value="香港特别行政区">香港特别行政区</option>
+													<option value="澳门特别行政区">澳门特别行政区</option>
+													<option value="广西壮族自治区">广西壮族自治区</option>
+													<option value="宁夏回族自治区">宁夏回族自治区</option>
+													<option value="新疆维吾尔自治区">新疆维吾尔自治区</option>
+													<option value="内蒙古自治区">内蒙古自治区</option>
+													<option value="西藏自治区">西藏自治区</option>
+												</select>
+												<input type="hidden" id="zoneInput"/>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<ul class="um-list" id="brithDayCon">
+						<li>
+							<div class="um-list-item">
+								<div class="um-list-item-inner">
+									<div class="um-list-item-body">
+										<div class="clearfix">
+											<div class="um-xs-12 um-text-overflow um-gray">
+												<div class="pr">
+													<input id="datetimeDate-begin" placeholder="请选择起始日期" class="mbsc-comp form-control USER_BIRTHDAY" readonly="">
+													<span class="ti-angle-down select-icon"></span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<ul class="um-list none" id="tellCon">
+						<li>
+							<div class="um-list-item">
+								<div class="um-list-item-inner">
+									<div class="um-list-item-body">
+										<div class="clearfix">
+											<div class="um-xs-12 um-text-overflow um-gray">
+												<div class="pr">
+													<input type="text" autofocus="autofocus" class="USER_TEL form-control"/>
+													<span class="um-input-clear ti-close" onclick="clearTxt(this)"></span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<ul class="um-list none" id="mailCon">
+						<li>
+							<div class="um-list-item">
+								<div class="um-list-item-inner">
+									<div class="um-list-item-body">
+										<div class="clearfix">
+											<div class="um-xs-12 um-text-overflow um-gray">
+												<div class="pr">
+													<input type="text" autofocus="autofocus" class="USER_MAIL form-control"/>
+													<span class="um-input-clear ti-close" onclick="clearTxt(this)"></span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="um-page um-bgc-gray" id='page3'>
+			<div id="pageHeader3" class="um-header um-common-header um-white">
+				<a href="#" class="um-header-left ti-angle-left" style="color:#fff;" onclick="toPage('#page1')">返回</a>
+				<h3>安全中心</h3>
+				<a href="#" onclick="callTell()" class="um-header-right  um-top-common iconfont um-index-dianhua">&#xe601;</a>
+				<a href="#" onclick="getSenderMess()" class="um-header-right iconfont um-index-dianhua">&#xe605;</a>
+			</div>
+			<div class="um-content list-block f12">
+				<div class="um-row">
+					<ul class="um-list f14" id='targetInfo'>
+						<li>
+							<a class="um-list-item" onclick="gotoPage('html/wode/wodeziliao/xiugaimima.html','xiugaimima')">
+							<div class="um-list-item-inner">
+								<div class="um-list-item-body">
+									<div class="clearfix">
+										<div class="um-xs-5 tl um-text-overflow">
+											<span>密码</span>
+										</div>
+										<div class="um-xs-7 tr um-text-overflow um-gray">
+											<input type="password" class="USER_PASSWORD um-gray tr" readonly="readonly" style="border:none;width:100%"/>
+										</div>
+									</div>
+								</div>
+							</div> </a>
+						</li>
+						<li>
+							<a class="um-list-item" data-type="shenfenyanzheng" onclick="gotoPage('html/wode/wodeziliao/shenfenyanzheng.html','shenfenyanzheng')">
+							<div class="um-list-item-inner">
+								<div class="um-list-item-body">
+									<div class="clearfix">
+										<div class="um-xs-5 tl um-text-overflow">
+											<span>身份证件</span>
+										</div>
+										<div class="um-xs-7 tr um-text-overflow um-gray">
+											<span class="USER_CREDNO"></span>
+										</div>
+									</div>
+								</div>
+							</div> </a>
+						</li>
+						<li>
+							<!-- <a class="um-list-item" data-type='qiyebangding' onclick="gotoPage('html/wode/wodeziliao/qiyebangding.html','qiyebangding')"> -->
+							<a class="um-list-item" data-type='qiyebangding' onclick="gotoPage('html/main/xiaoxi/developping.html','qiyebangding')">
+							<div class="um-list-item-inner">
+								<div class="um-list-item-body">
+									<div class="clearfix">
+										<div class="um-xs-5 tl um-text-overflow">
+											<span>企业绑定</span>
+										</div>
+										<div class="um-xs-7 tr um-text-overflow um-gray">
+											<span class="USER_TYPE"></span>
+										</div>
+									</div>
+								</div>
+							</div> </a>
+						</li>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script src="../../js/wode/wodeziliao.js"></script>
+	</body>
+</html>

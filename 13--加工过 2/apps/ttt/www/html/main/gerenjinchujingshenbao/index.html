@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../../css/iuapmobile.um-2.7.0.css">
+		<link rel="stylesheet" href="../../../css/gxxmain.css">
+		<link rel="stylesheet" href="../../../css/font-icons.css">
+		<link rel="stylesheet" href="../../../css/iconfont.css">
+		<link rel="stylesheet" href="../../../css/common.css">
+		<script src="../../../js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+		<script src="../../../js/summer.js" ></script>
+		<script src="../../../js/jquery-2.1.4.min.js" ></script>
+		<script src="../../../js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+	</head>
+	<style>
+		.um-footer {
+			background: #fff;
+		}
+		#ExitandEntry .dls {
+			margin-bottom: 10px;
+		}
+		#ExitandEntry .dls dt {
+			width: 30%;
+			display: inline-block;
+		}
+		#ExitandEntry .dls dd {
+			width: 65%;
+			display: inline-block;
+		}
+		#ExitandEntry .form-control {
+			width: 100%;
+		}
+		#ExitandEntry h4 {
+			font-weight: normal;
+			text-indent: 10px;
+			/*border-top: 1px solid rgba(0, 0, 0, 0.1);
+			 border-bottom: 1px solid rgba(0, 0, 0, 0.1); */
+			border-left: 3px solid #004593;
+			padding: 10px 0;
+			margin: 10px -15px;
+			border-right: none;
+			background: #efeff4;
+		}
+		#ExitandEntry label {
+			display: inline-block;
+		}
+		.tabCon {
+			display: none;
+		}
+		#ExitandEntry .panel {
+			border-bottom: 1px dashed #004593;
+			margin-top: 10px;
+		}
+
+		#ExitandEntry .panel:last {
+			border-bottom: none;
+		}
+		#ExitandEntry .um-check-box {
+			line-height: 2;
+		}
+		#ExitandEntry .um-check-inline {
+			color: #000;
+			text-indent: 10px;
+		}
+		#ExitandEntry .um-check-inline .um-icon-checkbox {
+			color: #004593;
+		}
+	</style>
+	<script>
+		summerready=function(){
+			var header1 = $summer.byId("pageHeader1");
+			$summer.fixStatusBar(header1);
+			var header2 = $summer.byId("pageHeader2");
+			$summer.fixStatusBar(header2);
+			$("#remember").click(function() {
+				var rems = $("#remember").is(":checked");
+				if (rems) {
+					$(".um-footer .btn").addClass("um-btn-warning");
+				} else {
+					return
+				}
+
+			});
+			$('body').on('click', '.um-btn-warning', function() {
+				UM.page.changePage({
+					target : "#ExitandEntry",
+					isReverse : 0,
+					transition : "um"
+				})
+			});
+
+			$(".ti-plus").click(function() {
+				var pLen = $(".um-list li").length;
+				var Msg = "<li class='um-listview-row'>" + "<a class='um-list-item um-swipe-action um-no-icon'>" + "<div class='um-swipe-btns'><span class='um-swipe-btn um-delete'>删除</span></div>" + "<div class='um-list-item-inner'><div class='um-list-item-body'>" + "<div class='clearfix'><div class='um-xs-4 tl'>品名/币种</div><div class='um-xs-8 tr'><input type'text' class='form-control' placeholder='请输入皮毛品名/币种'></div></div>" + "<div class='clearfix'><div class='um-xs-4 tl'>数量</div><div class='um-xs-8 tr'><input type='text' class='form-control' placeholder='请输入数量'></div></div>" + "<div class='clearfix'><div class='um-xs-4 tl'>金额</div><div class='um-xs-8 tr'><input type='text' class='form-control' placeholder='请输入金额'></div></div>" + "<div class='clearfix'><div class='um-xs-4 tl'>海关备注</div><div class='um-xs-8 tr'><textarea type='text' class='form-control' placeholder='请输入备注'></textarea></div></div></div>" + "</div></a></li>"
+				if (pLen < 5) {
+					$(".um-list").append(Msg);
+
+				} else {
+					return false;
+				}
+			});
+		}
+
+		function setTab(name) {
+			var menudiv = $("#con_" + name);
+			$(this).addClass("active");
+			$(".tabCon").css("display", "none");
+			menudiv.css("display", "block");
+		}
+	</script>
+	<body>
+		<div class="um-page" id="Tips">
+			<div id="pageHeader1" class="um-header um-common-header um-white">
+				<a href="#" onclick="api.closeWin()" class="um-header-left ti-angle-left" style="color:#fff;">返回</a>
+				<h3>个人进出境申报</h3>
+				<a href="#" onclick="callTell()" class="um-header-right  um-top-common iconfont um-index-dianhua">&#xe601;</a>
+				<a href="#" onclick="getSenderMess()" class="um-header-right iconfont um-index-dianhua">&#xe605;</a>
+			</div>
+
+			<div class="um-content mt20 f14">
+				一、	重要提示：
+				<p>
+					1.	没有携带应向海关申报物品的旅客，无需填写本申报，可选择“无申报通道”（又称“绿色通道”，标识为“”）通关。
+				</p>
+				<p>
+					2.	携带有应向海关申报物品的旅客，应当填写本申报单，像海关书面申报，并选择“中报通道”（又称“红色通道”，标识为“”）通关 海关免于监管的人员以及随同成人旅行的16周岁以下旅客可不填写申报单。
+				</p>
+				<p>
+					3.	请妥善保管本申报单，以便在返程时继续使用。
+				</p>
+				<p>
+					4.	本申报单所称“居民旅客”系统其通常定居地在中国境内的旅客，“非居民旅客”系指其通常定居地在中国关境外的旅客。
+				</p>
+				<p>
+					5.	不如实申报的旅客将承担相应法律责任。
+				</p>
+				<p>
+					二、	中华人民共和国禁止进境物品：
+				</p>
+				<p>
+					1.	各种武器、仿真武器、弹药及爆炸物品；
+				</p>
+				<p>
+					2.	伪造的货币及伪造的有价证券；
+				</p>
+				<p>
+					3.	对中国政治、经济、文化、道德有害的印刷品、胶卷、照片、唱片、影片、录音带、录像带、激光唱盘、激光视盘、计算机存储介质及其它物品；
+				</p>
+				<p>
+					4.	各种壮烈毒药；
+				</p>
+				<p>
+					5.	鸦片、吗啡、海洛因、大麻以及其它能使人成瘾的麻醉品、精神药物；
+				</p>
+				<p>
+					6.	新鲜水果、茄科蔬菜、活动物（犬、猫除外）、动物产品、动植物病原体和害虫及其它有害生物、动物尸体、土壤、转基因生物材料、动植物疫情；
+				</p>
+				流行的国家和地区有关动植物及其产品和其它应检物；</p>
+
+			</div>
+			<div class="um-footer">
+				<div class="p20 tl">
+					<label class="um-check-inline f14 um-black" style="text-indent:10px;width:100%">
+						<input name="um-checkbox-inline" type="checkbox" value="不再提示" id='remember'>
+						已阅读 <span class="um-icon-checkbox um-css3-vc"></span> </label>
+					<a class="btn um-btn-gray mt20">我知道了</a>
+				</div>
+			</div>
+		</div>
+		<div class="um-page" id="ExitandEntry">
+			<div id="pageHeader2" class="um-header um-common-header um-white">
+				<a href="#" onclick="api.closeWin()" class="um-header-left ti-angle-left" style="color:#fff;">返回</a>
+				<h3>个人进出境申报</h3>
+				<a href="#" onclick="callTell()" class="um-header-right  um-top-common iconfont um-index-dianhua">&#xe601;</a>
+				<a href="#" onclick="getSenderMess()" class="um-header-right iconfont um-index-dianhua">&#xe605;</a>
+			</div>
+			<div class="um-content f14">
+				<div class="um-header um-common-xuan" style="background:#efeff4;">
+					<div class="um-css3-center w150">
+						<ul class="um-tabbar m10">
+							<li class="active" onclick="setTab('entry')">
+								<a >进境</a>
+							</li>
+							<li onclick="setTab('exit')">
+								<a >出境</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class='userInfo mt20'>
+					<h4>个人信息</h4>
+					<dl class="dls">
+						<dt>
+							姓
+						</dt>
+						<dd>
+							<input type="text" class='form-control'>
+						</dd>
+					</dl>
+					<dl class="dls">
+						<dt>
+							名
+						</dt>
+						<dd>
+							<input type="text" class='form-control'>
+						</dd>
+					</dl>
+					<dl class="dls">
+						<dt>
+							性别
+						</dt>
+						<dd>
+							<label class="um-check-inline mr20">
+								<input name="um-checkbox-inline" type="radio" value="男" checked>
+								男 <span class="um-icon-checkbox um-css3-vc"></span> </label>
+							<label class="um-check-inline">
+								<input name="um-checkbox-inline" type="radio" value="女">
+								女 <span class="um-icon-checkbox um-css3-vc"></span> </label>
+
+						</dd>
+
+					</dl>
+					<dl class="dls">
+						<dt>
+							出生日期
+						</dt>
+						<dd>
+							<input type="text" class='form-control'>
+						</dd>
+					</dl>
+					<dl class="dls">
+
+						<dt>
+							国际(地区)
+						</dt>
+						<dd>
+							<input type="text" class='form-control'>
+						</dd>
+					</dl>
+					<dl class="dls">
+						<dt>
+							护照(进出境证件)号码
+						</dt>
+						<dd>
+							<input type="text" class='form-control'>
+						</dd>
+					</dl>
+
+				</div>
+				<div class="menudiv mt20">
+					<div id="con_entry" class="tabCon" style="display:block">
+						<h4>进境旅客填写</h4>
+						<dl class="dls">
+							<dt>
+								来自何地
+							</dt>
+							<dd>
+								<input type="text" class='form-control'>
+							</dd>
+						</dl>
+						<dl class="dls">
+							<dt>
+								进境航班号/车次/船名
+							</dt>
+							<dd>
+								<input type="text" class='form-control'>
+							</dd>
+						</dl>
+						<dl class="dls">
+							<dt>
+								进境日期
+							</dt>
+							<dd>
+								<input type="text" class='form-control'>
+							</dd>
+						</dl>
+						<div>
+							<h4>需要申报的物品<span class="um-red mt10 f12"> (携带有下列物品请在“口”打勾) </span></h4>
+							<div class="um-check-box">
+								<label class="um-check-inline">
+									<input name="um-checkbox-inline" type="checkbox" checked>
+									动植物及其产品、微生物、生物制品、人体组织、血液及其制品<span class="um-icon-checkbox um-css3-vc"></span> </label>
+							</div>
+
+							<div class="um-check-box">
+								<label class="um-check-inline">
+									<input name="um-checkbox-inline" type="checkbox">
+									居民旅客在境外获取超过人民币5,000元的物品<span class="um-icon-checkbox um-css3-vc"></span> </label>
+							</div>
+
+							<div class="um-check-box">
+								<label class="um-check-inline">
+									<input name="um-checkbox-inline" type="checkbox">
+									非居民旅客拟留在境内总值超过人民币2,000的物品<span class="um-icon-checkbox um-css3-vc"></span> </label>
+							</div>
+
+							<div class="um-check-box">
+								<label class="um-check-inline">
+									<input name="um-checkbox-inline" type="checkbox">
+									超过1,500毫升的酒精饮料（酒精含量12°以上），或超过400支雪茄，或超过500克烟丝<span class="um-icon-checkbox um-css3-vc"></span> </label>
+							</div>
+
+							<div class="um-check-box">
+								<label class="um-check-inline">
+									<input name="um-checkbox-inline" type="checkbox">
+									超过20,000人民币现钞，或超过折合美元5,000外币现钞 <span class="um-icon-checkbox um-css3-vc"></span> </label>
+							</div>
+
+							<div class="um-check-box">
+								<label class="um-check-inline">
+									<input name="um-checkbox-inline" type="checkbox">
+									分离后运输行李、货物、货样、广告品<span class="um-icon-checkbox um-css3-vc"></span> </label>
+							</div>
+
+							<div class="um-check-box">
+								<label class="um-check-inline">
+									<input name="um-checkbox-inline" type="checkbox">
+									其他需要向海关申报的物品<span class="um-icon-checkbox um-css3-vc"></span> </label>
+							</div>
+
+						</div>
+					</div>
+					<div id="con_exit" class="tabCon">
+						<h4>出境旅客填写</h4>
+						<dl class="dls">
+							<dt>
+								前往何地
+							</dt>
+							<dd>
+								<input type="text" class='form-control'>
+							</dd>
+						</dl>
+						<dl class="dls">
+							<dt>
+								进境航班号/车次/船名
+							</dt>
+							<dd>
+								<input type="text" class='form-control'>
+							</dd>
+						</dl>
+						<dl class="dls">
+							<dt>
+								进境日期
+							</dt>
+							<dd>
+								<input type="text" class='form-control'>
+							</dd>
+						</dl>
+						<div>
+							<p class="um-red">
+								携带有下列物品请在“口”打勾
+							</p>
+							<div class="um-check-box">
+								<label class="um-check-inline">
+									<input name="um-checkbox-inline" type="checkbox">
+									文物、濒危动植物及其制品、生物物种资源、金银等贵重金属<span class="um-icon-checkbox um-css3-vc"></span> </label>
+							</div>
+							<div class="um-check-box">
+								<label class="um-check-inline">
+									<input name="um-checkbox-inline" type="checkbox">
+									居民旅客携带需复带进境<span class="um-icon-checkbox um-css3-vc"></span> </label>
+							</div>
+							<div class="um-check-box">
+								<label class="um-check-inline">
+									<input name="um-checkbox-inline" type="checkbox">
+									超过20,000人民币现钞，或超过折合美元5,000外币现钞<span class="um-icon-checkbox um-css3-vc"></span> </label>
+							</div>
+							<div class="um-check-box">
+								<label class="um-check-inline">
+									<input name="um-checkbox-inline" type="checkbox">
+									货物、货样、广告品<span class="um-icon-checkbox um-css3-vc"></span> </label>
+							</div>
+							<div class="um-check-box">
+								<label class="um-check-inline">
+									<input name="um-checkbox-inline" type="checkbox">
+									其他需要向海关申报的物品<span class="um-icon-checkbox um-css3-vc"></span> </label>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div class="panelBox ">
+					<h4>填写详情 <span class="um-red mt10 f12"> (携带有上述物品的,请详细填写) </span><i class="ti-plus fr mr15 f16" id="addMsg"></i></h4>
+					<div class="um-listview-wrap um-row" id="listview">
+						<ul class="um-list um-no-active">
+							<li class="um-listview-row">
+								<a class="um-list-item um-swipe-action um-no-icon">
+								<div class="um-swipe-btns">
+									<span class="um-swipe-btn um-delete">删除</span>
+								</div>
+								<div class="um-list-item-inner">
+									<div class="um-list-item-body">
+										<div class="clearfix">
+											<div class="um-xs-4 tl">
+												品名/币种
+											</div>
+											<div class="um-xs-8 tr">
+												<input type="text" class='form-control' placeholder="请输入皮毛品名/币种">
+											</div>
+										</div>
+										<div class="clearfix">
+											<div class="um-xs-4 tl">
+												数量
+											</div>
+											<div class="um-xs-8 tr">
+												<input type="text" class='form-control' placeholder="请输入数量">
+											</div>
+										</div>
+										<div class="clearfix">
+											<div class="um-xs-4 tl">
+												金额
+											</div>
+											<div class="um-xs-8 tr">
+												<input type="text" class='form-control' placeholder="请输入金额">
+											</div>
+										</div>
+										<div class="clearfix">
+											<div class="um-xs-4 tl">
+												海关备注
+											</div>
+											<div class="um-xs-8 tr">
+												<textarea type="text" class='form-control' placeholder="请输入备注"></textarea>
+											</div>
+										</div>
+									</div>
+								</div> </a>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>

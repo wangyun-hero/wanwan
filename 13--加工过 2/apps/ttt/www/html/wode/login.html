@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html class="um-win">
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../css/font-icons.css">
+		<link rel="stylesheet" href="../../css/iuapmobile.um.css">
+		<link rel="stylesheet" href="../../css/common.css">
+		<script src="../../js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+		<script src="../../js/summer.js" ></script>
+		<script src="../../js/knockout-2.2.0.js" ></script>
+		<script src="../../js/jquery-2.1.4.min.js" ></script>
+		<script src="../../js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+		<script src="../../js/wode/KinerCode.js"></script>
+		<script type="text/javascript" src="../../js/jquery-mvalidate.js"></script>
+		<script src="../../js/wode/login.js"></script>
+		<style>
+            #main {
+                width: 100%;
+                height: 100%;
+                padding: 0;
+                margin: 0;
+                background: #0759ac url(../../img/loginbj.png) no-repeat;
+                background-size: cover;
+            }
+            .login {
+                background: transparent;
+                padding: 15px;
+                border-radius: 5px;
+                padding: 6%;
+            }
+            .login button.um-btn {
+                padding: 7px 12px;
+                border-color: #02BAFC;
+                outline: none;
+                border-radius: 50px;
+                color: #fff;
+                margin-top: 26%;
+                background: #02BAFC;
+            }
+            input.form-control:focus {
+                box-shadow: none;
+                border-color: #e3e3e5;
+            }
+            .login .um-input-clear {
+                padding: 4px;
+            }
+            .form-control:focus + .um-input-clear {
+                color: #0a0a0a;
+                padding: 4px;
+                background: #e3e3e5;
+            }
+            .um-input-clear.ti-eye.eye {
+                color: #256FEA;
+            }
+            .form-control {
+                background: transparent;
+                font-size: 14px;
+                border: 1px solid #e3e3e5;
+                color: #e3e3e5;
+            }
+            .form-control::-webkit-input-placeholder {
+                color: #e3e3e5;
+            }
+            .form-control::-moz-placeholder {
+                color: #e3e3e5;
+            }
+            .form-control:-ms-input-placeholder {
+                color: #e3e3e5;
+            }
+            .logina {
+                color: #FFFFFF;
+                font-size: 14px;
+                display: inline-block;
+                position: absolute;
+                left: 50%;
+                margin-left: -30%;
+                top: 50%;
+                margin-top: 190px;
+                width: 60%;
+                text-align: center;
+            }
+            /*活动页面*/
+            .um-actionsheet .btn {
+                color: #007aff;
+                font-size: 16px;
+            }
+            @media (width: 375px) {
+                .logina {
+                    transition: top 1s ease;
+                    top: 66%;
+                }
+            }
+            @media (width: 414px) {
+                .logina {
+                    top: 74%;
+                    transition: top 1s ease;
+                }
+            }
+		</style>
+	</head>
+
+	<body>
+		<div class="um-page um-win" id="index">
+			<div id="main" class="um-content p15 um-box-center um-row">
+				<form id="loginForm" onsubmit="return false;" style="width:100%">
+					<div class="login um-xs-12" style="margin-top:25%">
+						<p class="title tc mb30 fb f24"></p>
+						<div class="pr" style="background:transparent;">
+							<input id="username" type="text" class="form-control um-no-brs" placeholder="请输入用户名/手机号码 " data-required="true" data-descriptions="username" >
+							<span class="um-input-clear ti-close" onclick="clearTxt(this)"></span>
+						</div>
+						<div class="pr" style="background:transparent;margin-top:4%;">
+							<input id="password" type="password" class="form-control um-no-brs" placeholder="请输入密码 " data-required="true" data-descriptions="password">
+							<span class="um-input-clear ti-close" onclick="clearTxt(this)"></span>
+						</div>
+						<div class="pr" style="background:transparent;margin-top:4%;position: relative">
+							<input  id="inputCode" type="text" class="form-control um-no-brs" placeholder="请输入验证码 " style="width:50%;position: absolute;left:0">
+							<span id="code"class="form-control um-no-brs" style="background:url('../../img/yzmBg.png');font-size:14px;width:50%;border:1px solid #ccc;position: absolute;right:0"></span>
+						</div>
+						<div class="clearfix mt30"></div>
+						<input type="submit" class="um-btn mt30 loginbutton" id="subMessBT" value="登录"/>				
+						<p class="tr mt10 f12" style="position: relative;margin-top: 6%;">
+							<a data-id="registUser" href="#" class="um-white fl">新用户注册</a>
+							<a data-id="wangjimima" href="#" class="um-white">忘记密码？</a>
+						</p>
+						<a data-id="youke" href="#" class="logina"> <span style="width:57%;border-top:1px solid #fff;display:block;margin:0 auto 12px"></span> &nbsp;&nbsp;继续以游客身份浏览  &nbsp;> </a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

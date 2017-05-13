@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<meta name = "format-detection" content = "telephone=no">
+		<title>个人税款模拟计算器</title>
+		<link rel="stylesheet" href="../../../css/iuapmobile.um-2.7.0.css">
+		<link rel="stylesheet" href="../../../css/font-icons.css">
+		<link rel="stylesheet" href="../../../css/iconfont.css">
+		<link rel="stylesheet" href="../../../css/common.css">
+		<link rel="stylesheet" href="../../../css/geshuimoniqi.css" />
+		<script src="../../../js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+		<script src="../../../js/summer.js" ></script>
+		<script src="../../../js/jquery-2.1.4.min.js" ></script>
+		<script src="../../../js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+		<script type="text/javascript" src="../../../js/knockout-2.2.0.js"></script>
+		<script type="text/javascript" src="../../../js/Frameworks/iuapmobile.frameworks.listview.js"></script>
+	</head>
+
+	<body>
+		<div id="geshuimoniqi">
+			<div class="pr" style="height: 100%">
+				<div class="um-page active" id="page1">
+					<!-- top--头部 -->
+					<div id="pageHeader" class="um-header  um-common-header">
+						<a href="#" onclick="api.closeWin()" class="um-header-left ti-angle-left um-white" style="color:#fff;">返回</a>
+						<h3 class='um-white'>个人税款模拟计算器</h3>
+						<a href="#" onclick="callTell()" class="um-header-right  um-top-common iconfont um-index-dianhua">&#xe601;</a>
+						<a href="#" onclick="getSenderMess()" class="um-header-right iconfont um-index-dianhua">&#xe605;</a>
+					</div>
+					<div class="um-content" id="classifyList">
+						<div class="um-input-search">
+							<form onsubmit="return false;" style="width:100%">
+								<input type="search" id="searchValue" class=" form-control " placeholder="搜索" style="width:100%">
+							</form>
+						</div>
+						<!--四级联动-->
+						<ul class="project-task-item-container"></ul>
+					</div>
+
+				</div>
+				<!--税率模拟器-->
+				<div class="um-page" id="page2">
+					<!-- top--头部 -->
+					<div id="pageHeader2" class="um-header  um-common-header">
+						<a href="#" onclick="toPage('#page1')" data-reverse="true" class="um-header-left ti-angle-left um-white" style="color:#fff;">返回</a>
+						<h3 class='um-white'>个人税款模拟计算器</h3>
+						<a href="#" onclick="callTell()" class="um-header-right  um-top-common iconfont um-index-dianhua">&#xe601;</a>
+						<a href="#" onclick="getSenderMess()" class="um-header-right iconfont um-index-dianhua">&#xe605;</a>
+					</div>
+					<div class="um-content" id='imitator'>
+						<div class="um-title-con clearfix">
+							<div class="um-xs-12 um-title um-blue" style="text-align: center">
+								当前计算物品：<span class="goodsname" id="goodsname"></span>
+								<input type="hidden" class="goodsrate_code" id="goodsrate_code">
+								<input type="hidden" class="goodsrate_id" id="goodsrate_id">
+							</div>
+						</div>
+						<div class="um-box f14">
+							<div class="um-bf2 vm tl">
+								单位数量
+							</div>
+							<div class="um-bf4">
+								<input type="number" placeholder="请输入数量" class="form-control tr goodsnumber require isNum" value="1">
+							</div>
+							<div class="um-bf2 tr" style="line-height:20px">
+								<span class="unitname"></span>
+							</div>
+						</div>
+						<div class="um-box f14">
+							<div class="um-bf2 tl">
+								完税价格
+							</div>
+							<div class="um-bf4">
+								<input type="number" class="form-control tr customsvalue require isNum">
+								<div class="um-gray f12 mt5">
+									或手输入实际价格
+								</div>
+							</div>
+							<div class="um-bf2 tr">
+								<span>元</span>
+							</div>
+						</div>
+						<div class="um-box f14">
+							<div class="um-bf2 tl">
+								税率
+							</div>
+							<div class="um-bf4">
+								<input type="hidden" id='rate' />
+								<p class="tc rate" style="line-height:39px"></p>
+
+							</div>
+							<div class="um-bf2 tr"></div>
+						</div>
+						<div class="um-box f14">
+							<div class="um-bf2 tl">
+								计征税款
+							</div>
+							<div class="um-bf4">
+								<p class="tc f18 um-blue taxdues"  style="line-height:39px"></p>
+							</div>
+							<div class="um-bf2 tr">
+								<span>元</span>
+							</div>
+						</div>
+					
+						<div class="btnCon mt40 mb20">
+							<a class="btn" id='btn-tax-commit'>计算</a>
+						</div>
+						<div class="um-xs-12 f12 um-red  pl15 mt20">
+							1、本功能仅适用个人邮包渠道，不适用跨境电商或按货物报关。
+							<br>
+							2、依据为海关总署《2010年43号公告》及《2016年25号公告》。
+							<br>
+							3、个人携带进出境的行李物品、邮寄进出境的物品，应当以自用、合理数量为限。具体请以现场为准。
+							<br>
+						</div>
+					</div>
+
+				</div>
+				<!--汇总列表-->
+				<div class="um-page" id="page3">
+					<!-- top--头部 -->
+					<div id="pageHeader3" class="um-header  um-common-header">
+						<a href="#" id="goback" data-reverse="true" class="um-header-left ti-angle-left um-white" style="color:#fff;">返回</a>
+						<h3 class='um-white'>个人税款模拟计算器</h3>
+						<a href="#" onclick="callTell()" class="um-header-right  um-top-common iconfont um-index-dianhua">&#xe601;</a>
+						<a href="#" onclick="getSenderMess()" class="um-header-right iconfont um-index-dianhua">&#xe605;</a>
+					</div>
+					<div class="um-content none" id="shopCartCon">
+						<div class="um-title-con clearfix">
+							<div class="um-xs-12 um-title">
+								当前计算物品：总价<span class="fr" id="openEdit">编辑</span>
+							</div>
+							<div class="um-xs-5 tl">
+								物品名称
+							</div>
+							<div class="um-xs-4 tc" style="padding-left:0">
+								数量
+							</div>
+							<div class="um-xs-3 tr" style="padding-left:0">
+								计征税款
+							</div>
+						</div>
+						<div class="um-row">
+							<div class="um-listview-wrap" id="shopCartList">
+								<ul class="um-list um-no-active"></ul>
+							</div>
+						</div>
+						<div class="mt20" id="list-footer">
+							<div class="um-xs-8 tl f14 um-blue f16" >
+								总计
+							</div>
+							<div class="um-xs-4 tr f18 um-blue" id="sumResult"></div>
+							<div class="um-xs-12 tr um-gray f12">
+								人民币:元
+							</div>
+							<div class="btnCon mt40 mb20">
+							<a class="btn" id='btn-clean-commit'>清空汇总</a>
+						</div>
+							<div class="um-xs-12 f12 um-red mt20">
+								1、本功能仅适用个人邮包渠道，不适用跨境电商或按货物报关。
+								<br>
+								2、依据为海关总署《2010年43号公告》及《2016年25号公告》。
+								<br>
+								3、个人携带进出境的行李物品、邮寄进出境的物品，应当以自用、合理数量为限。具体请以现场为准。
+								<br>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--footer-->
+			<div class="um-footer um-footer-fixed">
+				<div class="um-footerbar">
+					<a  class="um-footerbar-item disable"> <i class="icon-add"></i>
+					<div class="f12 lh1" >
+						加入汇总
+					</div> </a>
+					<a class="um-footerbar-item" id="totalCart"> <i class="icon-sum pr"> <em class="um-sum-cicle none"></em> </i>
+					<div class="f12 lh1" >
+						汇总
+					</div> </a>
+					<a class="um-footerbar-item" id="editTotalCart"> <i class="icon-edit"></i>
+					<div class="f12 lh1" >
+						汇总编辑
+					</div> </a>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../../../js/main/geshuimoniqi/gsMain.js"></script>
+</html>

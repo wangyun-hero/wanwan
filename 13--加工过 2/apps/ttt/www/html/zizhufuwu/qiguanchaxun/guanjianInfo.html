@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title>企业关键信息查询</title>
+		<link rel="stylesheet" href="../../../css/gxxmain.css">
+		<link rel="stylesheet" href="../../../css/iuapmobile.um-2.7.0.css">
+		<link rel="stylesheet" href="../../../css/font-icons.css">
+		<link rel="stylesheet" href="../../../css/iconfont.css">
+		<link rel="stylesheet" href="../../../css/common.css">
+		<link rel="stylesheet" href="../../../css/tongguan.css">
+		<link rel="stylesheet" href="../../../css/resetmaingxx.css">
+		<script src="../../../js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+		<script src="../../../js/summer.js" ></script>
+		<script src="../../../js/jquery-2.1.4.min.js" ></script>
+		<script src="../../../js/mobiscroll.custom-3.0.0.min.js" ></script>
+		<script src="../../../js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+		<script src="../../../js/doT.min.js" ></script>
+		<script src="../../../js/zizhufuwu/qiguanchaxun/guanjianInfo.js"></script>
+	</head>
+	<body>
+		<div class="um-page active" id="page1">
+			<!-- top--头部 -->
+			<div id="pageHeader1" class="um-header um-common-header um-white">
+				<a href="#" onclick="api.closeWin()" class="um-header-left ti-angle-left" style="color:#fff;">返回</a>
+				<h3>企业关键信息查询</h3>
+				<a href="#" onclick="callTell()" class="um-header-right  um-top-common iconfont um-index-dianhua">&#xe601;</a>
+				<a href="#" onclick="getSenderMess()" class="um-header-right iconfont um-index-dianhua">&#xe605;</a>
+			</div>
+
+			<div class="um-content">
+				<div style="width:80px;height:80px;margin:0 auto;margin-top:10%;">
+					<img src="../../../img/index_gerenyoubaochaxun.png" style="width:100%;height:100%"/>
+				</div>
+				<p class="f12" style="margin-top:3%;text-align:center;color:#7F7F7F">
+					*查询可能需要一定 的时间，请您耐心等待
+				</p>
+				<div class="gxx-regist" style="margin-top:16%;">
+					<div>
+						<h6 class="gxx-h6">请选择查询类型</h6>
+						<div class="pr">
+							<select name="Type" id="type">
+								<option value="1">组织机构代码</option>
+								<option value="2">企业注册编码</option>
+							</select>
+							<span class="ti-angle-down select-icon"></span>
+						</div>
+
+						<div class="pr mt10">
+							<input id="baoguan_search" class="form-control" type="text" placeholder="请输入组织机构代码">
+							<span class="um-input-clear ti-close" onlick="clearTxt()"></span>
+						</div>
+					</div>
+
+					<div>
+						<h6 class="gxx-h6">请选择海关</h6>
+						<input type="text" id="haiguan"/>
+						<!-- <ul id="haiguan"><li data-val="深圳海关">深圳海关</li><li data-val="上海海关">上海海关</li><li>厦门</li><li>深圳海关</li></ul> -->
+					</div>
+					<div>
+						<h6 class="gxx-h6">起始时间</h6>
+
+						<input id="datetimeDate-begin" placeholder="请选择起始日期" class="mbsc-comp form-control" readonly="">
+
+					</div>
+					<div>
+						<h6 class="gxx-h6">终止时间</h6>
+
+						<input id="datetimeDate-end" placeholder="请选择终止日期" class="mbsc-comp form-control" readonly="">
+
+					</div>
+
+				</div>
+				<div class="btnCon mt40 mb20">
+					<a class="btn" id='search_btn'>查询</a>
+				</div>
+			</div>
+
+		</div>
+		<div class="um-page" id="page2">
+			<!-- top--头部 -->
+			<div id="pageHeader2" class="um-header um-common-header um-white">
+				<a href="#" onclick="api.closeWin()" class="um-header-left ti-angle-left" style="color:#fff;">返回</a>
+				<h3>企业关键信息查询</h3>
+				<a href="#" onclick="callTell()" class="um-header-right  um-top-common iconfont um-index-dianhua">&#xe601;</a>
+				<a href="#" onclick="getSenderMess()" class="um-header-right iconfont um-index-dianhua">&#xe605;</a>
+			</div>
+
+			<div class="um-content um-bgc-gray">
+				<div id="qiyeInfoCon">
+					<script id="qiyeInfo" type="text/x-dot-template">
+						<div class="um-card" >
+						<i class="fl mt40"><img src="../../../img/card.png" alt="card" width="60px"/></i>
+						<div class="title-heard blue" style="padding-left:100px">
+						<p class="mb10 f16">
+						{{=it.FULL_NAME}}
+						</p>
+						<p>
+						企业注册编码<span>{{=it[0].TRADE_CO}}</span>
+						</p>
+						<p>
+						组织机构代码{{=it[0].COP_GB_CODE}}
+						</p>
+						</div>
+						<div class="mt30" data-bind="foreach: data">
+						<a href="#" class="um-list-item">
+						<div class="um-list-item-inner">
+						<div class="um-list-item-body">
+						<div class="card-title">
+						<h5></h5>
+						<span class="um-blue"></span>
+						<span class="tips tips-darkpurple"> 有效日期- <em> {{=it[0].COP_END_DATE}} </em></span>
+						</div>
+						<div class="card-info pt10 clearfix">
+						<div class="um-xs-12 f14">
+						<em>当前状态</em><span>{{=it[0].COP_END_DATE}} </span>
+						</div>
+						<div class="um-xs-12 f14">
+						<em>通关锁定提醒</em><span>{{=it[0].COP_END_DATE}} </span>
+						</div>
+						<div class="um-xs-12 f14">
+						<em class="um-blue" onclick="ToggleShow(this)"><i class="current">+</i>回执内容</em>
+						<p class="none db pl10">
+						{{=it[0].COP_END_DATE}}
+						</p>
+						</div>
+
+						</div>
+						</div>
+						</div> </a><!--card-item-->
+
+						</div><!--data-->
+						</div>
+					</script>
+				</div>
+			</div>
+		</div>
+		<!--page2 end-->
+		<div class="um-page" id="page3">
+			<!-- top--头部 -->
+			<div id="pageHeader3" class="um-header um-common-header um-white">
+				<a href="#" onclick="api.closeWin()" class="um-header-left ti-angle-left" style="color:#fff;">返回</a>
+				<h3>企业关键信息查询</h3>
+				<a href="#" onclick="callTell()" class="um-header-right  um-top-common iconfont um-index-dianhua">&#xe601;</a>
+				<a href="#" onclick="getSenderMess()" class="um-header-right iconfont um-index-dianhua">&#xe605;</a>
+			</div>
+
+			<div class="um-content um-bgc-gray">
+				<img src="../../../img/noresults.png" alt="网络不给力" width="60%" style="margin-top:30%"/>
+				<p class="f14 mt30 mb10">
+					对不起，没有查询到结果！
+				<p>
+				<p class="f12 um-gray">
+					请核对您输入的查询条件
+					<br>
+					如有其它问题，可联系12360海关服务热线
+				</p>
+				<div class="btnCon mt40 mb20">
+					<a class="btn" onclick="toPage('#page1')">返回</a>
+				</div>
+			</div>
+		</div>
+		<!--page3 end-->
+	</body>
+</html>

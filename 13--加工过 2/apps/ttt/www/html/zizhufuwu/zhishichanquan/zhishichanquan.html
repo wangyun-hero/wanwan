@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title>知识产权备案查询</title>
+		<link rel="stylesheet" href="../../../css/gxxmain.css">
+		<link rel="stylesheet" href="../../../css/iuapmobile.um-2.7.0.css">
+		<link rel="stylesheet" href="../../../css/font-icons.css">
+		<link rel="stylesheet" href="../../../css/iconfont.css">
+		<link rel="stylesheet" href="../../../css/common.css">
+		<link rel="stylesheet" href="../../../css/tongguan.css">
+		<link rel="stylesheet" href="../../../css/resetmaingxx.css">
+		<script src="../../../js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+		<script src="../../../js/summer.js" ></script>
+		<script src="../../../js/jquery-2.1.4.min.js" ></script>
+		<script src="../../../js/mobiscroll.custom-3.0.0.min.js" ></script>
+		<script src="../../../js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+		<script src="../../../js/knockout-2.2.0.js" ></script>
+		<script src="../../../js/zizhufuwu/zhishichanquan/zhishichanquan.js"></script>
+	</head>
+	<body>
+		<div class="um-page" id="index1">
+			<!-- top--头部 -->
+			<div id="pageHeader1" class="um-header um-common-header um-white">
+				<a href="#" onclick="api.closeWin()" class="um-header-left ti-angle-left" style="color:#fff;">返回</a>
+				<h3>知识产权备案查询</h3>
+				<a href="#" onclick="callTell()" class="um-header-right  um-top-common iconfont um-index-dianhua">&#xe601;</a>
+				<a href="#" onclick="getSenderMess()" class="um-header-right iconfont um-index-dianhua">&#xe605;</a>
+			</div>
+
+			<div class="um-content">
+				<div style="width:80px;height:80px;margin:0 auto;margin-top:10%;">
+					<img src="../../../img/index_gerenyoubaochaxun.png" style="width:100%;height:100%"/>
+				</div>
+				<p class="f12" style="margin-top:3%;text-align:center;color:#7F7F7F">
+					*查询可能需要一定 的时间，请您耐心等待
+				</p>
+				<div class="gxx-regist" style="margin-top:16%;">
+					<div class="pr">
+						<input id="quanliren_search" class="form-control" type="text" placeholder="请输入权利人名称">
+						<span class="um-input-clear ti-close"></span>
+					</div>
+					<div class="pr mt10" >
+						<input id="quanlimingcheng_search" class="form-control" type="text" placeholder="请输入权利名称">
+						<span class="um-input-clear ti-close"></span>
+					</div>
+					<div class="pr mt10">
+						<input id="quanlihao_search" class="form-control" type="text" placeholder="请输入权力号">
+						<span class="um-input-clear ti-close"></span>
+					</div>
+					<div>
+						<h6 class="gxx-h6">请选择备案权力类别</h6>
+						<div class="pr">
+							<select name="Type" id="type">
+								<option value="1">商标权</option>
+								<option value="2">著作权</option>
+								<option value="3">专利权</option>
+							</select>
+							<span class="ti-angle-down select-icon"></span>
+						</div>
+
+					</div>
+					<div class="btnCon mt40 mb0">
+						<a class="btn" id='search_btn'>查 询</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="um-page" id="page2">
+			<!-- top--头部 -->
+			<div id="pageHeader2" class="um-header um-common-header um-white">
+				<a href="#" onclick="api.closeWin()" class="um-header-left ti-angle-left" style="color:#fff;">返回</a>
+				<h3>知识产权备案查询</h3>
+				<a href="#" onclick="callTell()" class="um-header-right  um-top-common iconfont um-index-dianhua">&#xe601;</a>
+				<a href="#" onclick="getSenderMess()" class="um-header-right iconfont um-index-dianhua">&#xe605;</a>
+			</div>
+
+			<div class="um-content">
+				<div class="um-listview-wrap" id="listview" style="margin:-1px 0px 0">
+					<ul class="um-list um-no-active" data-bind="foreach: data">
+						<li class="um-listview-row" onclick="toPage('#page3')">
+							<a href="#" class="um-list-item um-swipe-action um-no-icon" style="padding-left:0px">
+							<div class="um-list-item-inner">
+								<div class="um-list-item-body">
+									<div class="um-media-heading f14 um-common-h4 " data-bind="text:company">
+										北京用友软件有限公司
+									</div>
+								</div>
+							</div> </a>
+						</li>
+						<li class="um-listview-row">
+							<a href="#" class="um-list-item um-swipe-action um-no-icon" style="padding-left:0px">
+							<div class="um-list-item-inner">
+								<div class="um-list-item-body">
+									<div class="um-media-heading f14 um-common-h4 " data-bind="text:company">
+										北京用友软件有限公司
+									</div>
+								</div>
+							</div> </a>
+						</li>
+						<li class="um-listview-row">
+							<a href="#" class="um-list-item um-swipe-action um-no-icon" style="padding-left:0px">
+							<div class="um-list-item-inner">
+								<div class="um-list-item-body">
+									<div class="um-media-heading f14 um-common-h4 " data-bind="text:company">
+										北京用友软件有限公司
+									</div>
+								</div>
+							</div> </a>
+						</li>
+					</ul>
+					<span id="lastBottom" style="text-align: center;display:none;width: 100%;font-size:12px;color:#7F7F7F">中华人民共和国海关总署</span>
+				</div>
+				<input type="hidden" id="totalPageNum" value="1"/>
+
+			</div>
+		</div>
+
+		<div class="um-page" id="page3">
+			<!-- top--头部 -->
+			<div id="pageHeader3" class="um-header um-common-header um-white">
+				<a href="#" onclick="api.closeWin()" class="um-header-left ti-angle-left" style="color:#fff;">返回</a>
+				<h3>知识产权备案查询</h3>
+				<a href="#" onclick="callTell()" class="um-header-right  um-top-common iconfont um-index-dianhua">&#xe601;</a>
+				<a href="#" onclick="getSenderMess()" class="um-header-right iconfont um-index-dianhua">&#xe605;</a>
+			</div>
+
+			<div class="um-content um-bgc-gray">
+				<div class="um-card">
+					<div class="title-heard blue">
+						<p class="tc">
+							北京用友政务软件有限公司
+						</p>
+					</div>
+					<div class="mt30" data-bind="foreach: data">
+						<a href="#" class="um-list-item">
+						<div class="um-list-item-inner">
+							<div class="um-list-item-body">
+								<div class="card-title">
+									<h5></h5>
+									<span class="um-blue"></span>
+									<span class="tips tips-darkpurple"> 权力号- <em> 1122336585 </em></span>
+								</div>
+								<div class="card-info pt10 clearfix">
+									<div class="um-xs-12 f14">
+										<em>权利标识</em><span data-bind="text:status">100000</span>
+									</div>
+									<div class="um-xs-12 f14">
+										<em>权利名称</em><span data-bind="text:status">100000</span>
+									</div>
+									<div class="um-xs-12 f14">
+										<em>权利人名称</em><span data-bind="text:status">1张第三</span>
+									</div>
+									<div class="um-xs-12 f14">
+										<em>权利人国别</em><span data-bind="text:status">中国</span>
+									</div>
+									<div class="um-xs-12 f14">
+										<em>备案号</em><span data-bind="text:status">100000</span>
+									</div>
+									<div class="um-xs-12 f14">
+										<em>权利类别</em><span data-bind="text:status">著作权</span>
+									</div>
+									<div class="um-xs-12 f14">
+										<em>商品分类</em><span data-bind="text:status">著作权</span>
+									</div>
+									<div class="um-xs-12 f14">
+										<em>备案状态</em><span data-bind="text:status">著作权</span>
+									</div>
+									<div class="um-xs-12 f14">
+										<em>备案开始日期</em><span data-bind="text:status">著作权</span>
+									</div>
+									<div class="um-xs-12 f14">
+										<em>备案截止日期</em><span data-bind="text:status">著作权</span>
+									</div>
+								</div>
+							</div>
+						</div> </a><!--card-item-->
+					</div><!--data-->
+				</div>
+			</div>
+		</div>
+		<!--page3end-->
+		<div class="um-page" id="page3">
+			<!-- top--头部 -->
+			<div id="pageHeader1" class="um-header um-common-header um-white">
+				<a href="#" onclick="api.closeWin()" class="um-header-left ti-angle-left" style="color:#fff;">返回</a>
+				<h3>知识产权备案查询</h3>
+				<a href="#" onclick="callTell()" class="um-header-right  um-top-common iconfont um-index-dianhua">&#xe601;</a>
+				<a href="#" onclick="getSenderMess()" class="um-header-right iconfont um-index-dianhua">&#xe605;</a>
+			</div>
+
+			<div class="um-content um-bgc-gray">
+				<img src="../../../img/noresults.png" alt="网络不给力" width="60%" style="margin-top:30%"/>
+				<p class="f14 mt30 mb10">
+					对不起，没有查询到结果！
+				<p>
+				<p class="f12 um-gray">
+					请核对您输入的查询条件
+					<br>
+					如有其它问题，可联系12360海关服务热线
+				</p>
+				<div class="btnCon mt40 mb20">
+					<a class="btn" id="search_btn" onclick="toPage('#page1')">返回</a>
+				</div>
+			</div>
+		</div>
+		<!--page4 end-->
+	</body>
+</html>

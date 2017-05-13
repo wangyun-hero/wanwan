@@ -1,0 +1,100 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "D90BD4765AA6DBA0D9281426CBC0915C19C56443",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "7FF87CFF094C409AF36D2C8FBEAE737EC15649C8" : 9223372036854775807,
+    "D90BD4765AA6DBA0D9281426CBC0915C19C56443" : 9223372036854775807,
+    "9D4D8D99619D28DC875076F4224FD3130B25BE70" : 9223372036854775807,
+    "22347201250CD914EA0D1DCB448275373A2CDA23" : 9223372036854775807,
+    "DD20A1A48C66B5213E0FEBB87A95EF51D6C6F3E8" : 9223372036854775807,
+    "3C69E0F9D72D43ABD238865FD893C4DD763C1D73" : 9223372036854775807,
+    "D4C0B81A0C8CD971BDB71A86ABAFD06193288189" : 9223372036854775807,
+    "C616236C08E07FAE6A7B0E07B7E7F1B474057503" : 9223372036854775807,
+    "04101981B66E318109934C9516F88D824BB96459" : 9223372036854775807,
+    "65DAFBBE27D6FBD72F153A06D9086F4BB54FDCC5" : 9223372036854775807,
+    "8B3366FBF9699A8CCB764F44E854D1F695C54A83" : 9223372036854775807,
+    "9D081C182C66FFF45061BCA1CACC37D0383F36F3" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "850F2E61-9696-418D-A604-91F706504A05",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "7FF87CFF094C409AF36D2C8FBEAE737EC15649C8" : "TemplateProject\/Carthage\/Checkouts\/EMMUI\/",
+    "D90BD4765AA6DBA0D9281426CBC0915C19C56443" : "13--%E5%8A%A0%E5%B7%A5%E8%BF%87\/",
+    "9D4D8D99619D28DC875076F4224FD3130B25BE70" : "Carthage\/Carthage\/Checkouts\/Summer\/",
+    "22347201250CD914EA0D1DCB448275373A2CDA23" : "TemplateProject\/Carthage\/Checkouts\/Mediator\/",
+    "DD20A1A48C66B5213E0FEBB87A95EF51D6C6F3E8" : "Carthage\/Carthage\/Checkouts\/AFNetworking\/",
+    "3C69E0F9D72D43ABD238865FD893C4DD763C1D73" : "TemplateProject\/Carthage\/Checkouts\/IUMCommonUI\/",
+    "D4C0B81A0C8CD971BDB71A86ABAFD06193288189" : "Carthage\/Carthage\/Checkouts\/IUMAppAnalyze\/",
+    "C616236C08E07FAE6A7B0E07B7E7F1B474057503" : "TemplateProject\/Carthage\/Checkouts\/ModuleCategories\/",
+    "04101981B66E318109934C9516F88D824BB96459" : "Carthage\/Carthage\/Checkouts\/fmdb\/",
+    "65DAFBBE27D6FBD72F153A06D9086F4BB54FDCC5" : "Carthage\/Carthage\/Checkouts\/IUMCore\/",
+    "8B3366FBF9699A8CCB764F44E854D1F695C54A83" : "Carthage\/Carthage\/Checkouts\/Aspects\/",
+    "9D081C182C66FFF45061BCA1CACC37D0383F36F3" : "Carthage\/Carthage\/Checkouts\/EMM\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "TemplateProject",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "TemplateProject.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ccgus\/fmdb.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "04101981B66E318109934C9516F88D824BB96459"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git.yonyou.com:iUAPMobile_iOS\/Mediator.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "22347201250CD914EA0D1DCB448275373A2CDA23"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git.yonyou.com:iUAPMobile_iOS\/IUMCommonUI.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3C69E0F9D72D43ABD238865FD893C4DD763C1D73"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git.yonyou.com:iUAPMobile_iOS\/IUMCore.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "65DAFBBE27D6FBD72F153A06D9086F4BB54FDCC5"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git.yonyou.com:iUAPMobile_iOS\/EMMUI.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7FF87CFF094C409AF36D2C8FBEAE737EC15649C8"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/steipete\/Aspects.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8B3366FBF9699A8CCB764F44E854D1F695C54A83"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git.yonyou.com:iUAPMobile_iOS\/EMM.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9D081C182C66FFF45061BCA1CACC37D0383F36F3"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git.yonyou.com:iUAPMobile_iOS\/Summer.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9D4D8D99619D28DC875076F4224FD3130B25BE70"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git.yonyou.com:iUAPMobile_iOS\/ModuleCategories.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C616236C08E07FAE6A7B0E07B7E7F1B474057503"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git.yonyou.com:iUAPMobile_iOS\/IUMAppAnalyze.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D4C0B81A0C8CD971BDB71A86ABAFD06193288189"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git.yonyou.com:iUAPMobile_iOS\/TemplateProject.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D90BD4765AA6DBA0D9281426CBC0915C19C56443"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/AFNetworking\/AFNetworking.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DD20A1A48C66B5213E0FEBB87A95EF51D6C6F3E8"
+    }
+  ]
+}

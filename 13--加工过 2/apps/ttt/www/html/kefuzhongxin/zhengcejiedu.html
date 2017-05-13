@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title>政策解读</title>
+		<link rel="stylesheet" href="../../css/resetmaingxx.css">
+		<link rel="stylesheet" href="../../css/iuapmobile.um-2.7.0.css">
+		<link rel="stylesheet" href="../../css/font-icons.css">
+		<link rel="stylesheet" href="../../css/iconfont.css">
+		<link rel="stylesheet" href="../../css/common.css">
+		<link rel="stylesheet" href="../../css/iuapmobile.um.listview-2.7.0.css">
+		<script src="../../js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+		<script src="../../js/summer.js" ></script>
+		<script src="../../js/jquery-2.1.4.min.js" ></script>
+		<script src="../../js/doT.min.js" ></script>
+		<script src="../../js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+		<script src="../../js/Frameworks/iuapmobile.frameworks.listview.js" ></script>
+
+	</head>
+	<style>
+        .um-list {
+            background: #f5f5f5;
+            border-width: 0;
+        }
+        .um-list li {
+            background: #fff;
+            margin-bottom: 10px;
+        }
+
+	</style>
+
+	<body>
+		<div class="um-page active um-bgc-gray" id="index">
+			<div id="pageHeader" class="um-header  um-common-header">
+				<a href="#" onclick="api.closeWin()" class="um-header-left ti-angle-left" style="color:#fff;">返回</a>
+				<h3 class="um-white">政策解读</h3>
+				<a href="#" onclick="callTell()" class="um-header-right  um-top-common iconfont um-index-dianhua">&#xe601;</a>
+				<a href="#" onclick="getSenderMess()" class="um-header-right iconfont um-index-dianhua">&#xe605;</a>
+			</div>
+
+			<div class="um-content">
+					<div class="um-listview-wrap ml15 mr15" id="listview">
+						<ul class="um-list um-no-active pt20">
+
+						</ul>
+						<div id="empty" class="none" >
+							<span>暂无记录！</span>
+						</div>
+					</div>
+			</div>
+	</body>
+
+	<script id="dataTemp" type="text/x-dot-template">
+		{{for(var i=0;i<it.length;i++){}}
+		<li class="um-listview-row p10">
+		<a name="{{=it[i].linkurl}}" class="clearfix" onclick="openView(this.name)">
+		<div class="um-xs-12">
+		<div>
+		<span class="f16" style="color:#000;">{{=it[i].title}}</span>
+		</div>
+		<div class="f12 um-gray">
+		<span>发布日期： </span>
+		<span>{{=it[i].changetime}}</span>
+		</div>
+		<img src='data:image/png;base64,{{=it[i].img}}' alt="pic" width="100%"/>
+		</div>
+		</a>
+		</li>
+		{{}}}
+	</script>
+	<script src="../../js/kefuzhongxin/zhengcejiedu.js" ></script>
+</html>

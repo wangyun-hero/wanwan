@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../css/gxxmain.css">
+		<link rel="stylesheet" href="../../css/iuapmobile.um-2.7.0.css">
+		<link rel="stylesheet" href="../../css/font-icons.css">
+		<link rel="stylesheet" href="../../css/iconfont.css">
+		<link rel="stylesheet" href="../../css/common.css">
+		<link rel="stylesheet" type="text/css" href="../../css/iuapmobile.um.listview-2.7.0.css">
+		<link rel="stylesheet" type="text/css" href="../../css/islider.css">
+		<script src="../../js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+		<script src="../../js/summer.js"></script>
+		<script src="../../js/jquery-2.1.4.min.js" ></script>
+		<script src="../../js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+		<script src="../../js/main/content.js"></script>
+		<script src="../../js/islider.js"></script>
+		<script src="../../js/knockout-2.2.0.js"></script>
+		<script src="../../js/Frameworks/iuapmobile.frameworks.listview.js"></script>
+		<script src="../../js/index.js"></script>
+	</head>
+	<body >
+		<div class="um-page" style="background:#FFFFFF">
+			<div class="um-listview-wrap" style="padding-right:15px;padding-left:15px">
+				<div class="um-content" id="content" style="padding:0;">
+					<div class="um-row" style="margin:0;">
+						<div id="iSlider-wrapper" class="iSlider-wrapper" style="height:155px" ></div>
+					</div>
+					<!-- content--内容区 -->
+					<div class="um-grid mt10" id="listview">
+						<div class="um-grid-row tc" data-bind="foreach:data" style="margin:0;padding:0;width:100%">
+							<div class="" style="margin:-2% -3%">
+								<a href="#" class="um-circle um-black " data-bind="attr:{name:linkUrl}" onclick="openNewView('newViewPage',this.name,this.codeId)">
+								<p class="gxx-grid-row-erea"><img src="" data-bind="attr:{'src': img}" width=50 class="um-img-responsive " alt="">
+								</p> <div  class="f14 mt5" data-bind="text: sender" style="color:#0070C0"></div> </a>
+							</div>
+						</div>
+					</div>
+
+					<div class="gxx-list um-common-list" onclick="openNewView('appOperations','html/main/appEdit/appOperations.html','KuaiJieGongNengSheZhi')" style="border:none">
+						<span  class="um-list-item gxx-pad" style="padding: 10px 0 0px 15px;">
+							<div class="um-list-item-media um-icon-ios-general" style="margin-right:-10px"><img src="../../img/tianjia.png" style="width:33px;">
+							</div>
+							<div class="um-list-item-inner">
+								<div class="um-list-item-body um-main-kuaijie f12" style="color:#a6a6a6;">
+									快捷功能设置
+								</div>
+							</div> </span>
+					</div>
+
+					<div class="um-listview-wrap" id="applistview" style="padding-right:15px;padding-left:15px">
+						<ul class="gxx-list um-no-active gxx-pad" data-bind="foreach:appData">
+							<li class="um-listview-row" style="margin-bottom:2px">
+								<a href="#" class="um-list-item um-swipe-action um-no-icon"  data-bind="attr:{name:srcPath}" onclick="openNewView('newViewPage',this.name)" style="padding-left:0">
+								<div class="um-swipe-btns">
+									<span class="um-swipe-btn um-delete">删除</span>
+								</div>
+								<div class="um-list-item-media msg-info gxx-li-bj" style="margin-right:0;padding-right:15px;padding-left:13px;">
+									<img alt="" data-bind="attr:{'src': imgPath}" width="50px">
+								</div>
+								<div class="um-list-item-inner">
+									<div class="um-list-item-body gxx-li-bj">
+										<h4 class="um-media-heading fb f16 um-text-overflow um-common-h4" data-bind="text: name" style="margin:3px;color:#0070C0"></h4>
+									</div>
+									<div class="pr10" style="padding:0 7%">
+										<span class="um-gray ti-angle-right" style="font-size:14px;color:#0070C0;font-weight:bolder"> </span>
+									</div>
+								</div> </a>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../../js/main/appIndexScan.js"></script>
+<!-- 	<script src="../../js/public.js"></script> -->
+</html>

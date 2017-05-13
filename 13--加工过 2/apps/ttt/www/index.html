@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html class="um-win">
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/iuapmobile.um-2.7.0.css">
+		<link rel="stylesheet" href="css/font-icons.css">
+		<link rel="stylesheet" href="css/iconfont.css">
+		<link rel="stylesheet" href="css/common.css">
+		<link rel="stylesheet" type="text/css" href="css/iuapmobile.um.listview-2.7.0.css">
+		<link rel="stylesheet" type="text/css" href="css/islider.css">
+
+		<style>
+			#foottabbarItems img {
+				width:46px;
+				height:46px;
+			}
+			#foottabbarItems a {
+				padding-top:2px;
+				padding-bottom:1px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="um-page" id="indexView">
+			<div id="header" class="um-header  um-common-header" style="color:#FFFFFF;position: relative;background-image: url('img/logo.png');background-repeat:no-repeat; background-size: 58px 35px;background-position:50% 90%;">
+				<h3 style="opacity:0;">标题</h3>
+				<a href="tel:12360" class="um-header-right  um-top-common iconfont um-index-dianhua" >&#xe601;</a>
+				<a href="#" onclick="getSenderMess()" class="um-header-right iconfont um-index-dianhua" >&#xe605;</a>
+			</div>
+
+			<div id="mainContent" class="um-content">
+
+			</div>
+
+			<div class="um-footer" id="footer">
+				<div class="um-footer" style="border-top:1px solid #ccc;">
+					<div class="um-tabbar-foot" id="foottabbarItems">
+						<a id="item0" href="#" class="um-footerbar-item active main" onclick="openTab('main','首页')"> <i><img id="mainImg" src="img/bot_mainK.png" alt="" /></i> </a>
+						<a id="item1" href="#" class="um-footerbar-item zizhufuwu" onclick="openTab('zizhufuwu','自助服务')"> <i><img  id="zizhufuwuImg" src="img/bot_kefuzhongxinK.png" alt="" /></i> </a>
+						<a id="item2" href="#" class="um-footerbar-item kefuzhongxin" onclick="openTab('kefuzhongxin','客服中心')"> <i><img  id="kefuzhongxinImg" src="img/bot_zizhufuwuK.png" alt="" /></i> </a>
+						<a id="item3" href="#" class="um-footerbar-item wode" onclick="openTab('wode','我的')"> <i><img id="wodeImg"  src="img/bot_wodeK.png" alt="" /></i> </a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
+<script src="js/jquery-2.1.4.min.js" ></script>
+<script src="js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+<script src="js/summer.js" ></script>
+<script src="js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+<script src="js/main/geshuimoniqi/sysnServer.js"></script>
+<script src="js/index.js" ></script>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../../css/resetmaingxx.css">
+		<link rel="stylesheet" href="../../../css/iuapmobile.um-2.7.0.css">
+		<link rel="stylesheet" href="../../../css/font-icons.css">
+		<link rel="stylesheet" href="../../../css/gxxmain.css">
+		<link rel="stylesheet" href="../../../css/iconfont.css">
+		<link rel="stylesheet" href="../../../css/common.css">
+		<link rel="stylesheet" type="text/css" href="../../../css/iuapmobile.um.listview.css">
+		<script src="../../../js/summer.js" ></script>
+		<script src="../../../js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+		<script src="../../../js/jquery-2.1.4.min.js" ></script>
+		<script src="../../../js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+		<script type="text/javascript" src="../../../js/knockout-2.2.0.js"></script>
+		<script type="text/javascript" src="../../../js/Frameworks/iuapmobile.frameworks.listview.js"></script>
+	</head>
+	<div class="um-page none" id="page1">
+		<!-- top--头部 -->
+		<div class="um-header um-common-header" style="color:#004593" id="pageHeader">
+			<a href="#" onclick="api.closeWin()" class="um-header-left ti-angle-left" style="color:#fff;">返回</a>
+			<h3 class="um-common-ht3">机构电话</h3>
+			<a href="#" onclick="callTell()" class="um-header-right  um-top-common iconfont um-index-dianhua">&#xe601;</a>
+			<a href="#" onclick="getSenderMess()" class="um-header-right iconfont um-index-dianhua">&#xe605;</a>
+		</div>
+
+		<ul  class="gxx-tabbar" data-bind="foreach:arrData"  id="itemSwitch">
+			<li class="gxx-tabbar-li" id="itemCode"  data-bind="text: title"></li>
+		</ul>
+
+		<div class="um-input-search" style="width:100%;margin:0">
+			<form onsubmit="return false;" style="width:100%">
+				<div class="pr">
+					<input id="searchValue" class="form-control" type="search" placeholder="搜索" style="width:100%;">
+					<span class="um-input-clear ti-close" onclick="clearTxt()"></span>
+				</div>
+			</form>
+		</div>
+
+		<div class="um-content" id="um-content">
+			<div class="um-listview-wrap" id="listview">
+				<ul class="um-list um-list-static" data-bind="foreach:data">
+					<li class="um-listview-row um-list-con">
+						<div class="clearfix">
+							<div class="um-xs-6 tl um-text-overflow f14">
+								<span data-bind="text:customs"></span>
+							</div>
+							<div class="um-xs-6 tr um-text-overflow f12 um-gray">							
+									<span data-bind="text:telephone"></span>							
+							</div>
+						</div>
+					</li>
+				</ul>
+				<span id="lastBottom" style="text-align: center;display:none;width: 100%;color:#7F7F7F;font-size:12px">中华人民共和国海关总署</span>
+			</div>
+			<input type="hidden" id="totalPageNum" value="1"/>
+			<script type="text/javascript" src="../../../js/main/jigoudianhua.js"></script>
+		</div>
+	</div>
+	</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html class="um-win">
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../css/resetmaingxx.css">
+		<link rel="stylesheet" href="../../css/iuapmobile.um-2.7.0.css">
+		<link rel="stylesheet" href="../../css/font-icons.css">
+		<link rel="stylesheet" href="../../css/iconfont.css">
+		<link rel="stylesheet" href="../../css/common.css">
+		<script src="../../js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+		<script src="../../js/summer.js" ></script>
+		<script src="../../js/jquery-2.1.4.min.js" ></script>
+		<script src="../../js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+		<script src="../../js/knockout-2.2.0.js" ></script>
+		<!-- <script src="../../js/Frameworks/iuapmobile.frameworks.listview.js" ></script> -->
+		<script type="text/javascript">
+			function setTab(name, cursel) {
+				cursel_0 = cursel;
+				for (var i = 1; i <= links_len; i++) {
+					var menu = document.getElementById(name + i);
+					var menudiv = document.getElementById("con_" + name + "_" + i);
+					if (i == cursel) {
+
+						menudiv.style.display = "block";
+					} else {
+
+						menudiv.style.display = "none";
+					}
+				}
+			}
+
+			function Next() {
+				cursel_0++;
+				if (cursel_0 > links_len)
+					cursel_0 = 1
+				setTab(name_0, cursel_0);
+			}
+
+			var name_0 = 'one';
+			var cursel_0 = 1;
+			var links_len,
+			    iIntervalId;
+			onload = function() {
+				var links = document.getElementById("tab1").getElementsByTagName('li');
+				links_len = links.length;
+				for (var i = 0; i < links_len; i++) {
+					links[i].onmouseover = function() {
+						clearInterval(iIntervalId);
+					}
+				}
+				document.getElementById("con_" + name_0 + "_" + links_len).parentNode.onmouseover = function() {
+					clearInterval(iIntervalId);
+				}
+				setTab(name_0, cursel_0);
+			}
+		</script>
+
+	</head>
+	<body>
+		<div class="um-page" id="index">
+
+			<div class="um-content pr">
+				<div class="um-header um-common-xuan" style="background:#efeff4;" id="tab1">
+					<div class="um-css3-center w150">
+						<ul class="um-tabbar m10">
+							<li id="one1" class="active" onclick="setTab('one',1)">
+								<a >个人</a>
+							</li>
+							<li id="one2" onclick="setTab('one',2)">
+								<a >企业</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="menudiv">
+					<div id="con_one_1">
+						<div class="um-grid mt20">
+							<div class="um-grid-row tc">
+								<div>
+									<a href="#" class="um-circle um-black" onclick="openNewView('geshui','html/main/geshuimoniqi/gsSearch.html','GeRenMoNiJiSuanQi')" > <img src="../../img/zizhufuwu_geren_gerenshuifei.png" width="50px" class="um-img-responsive" alt="">
+									<div  class="f14 mt5">
+										个人税款模拟计算器
+									</div> </a>
+								</div>
+								<div>
+									<a href="#" class="um-circle um-black" onclick="openNewView('gryb','html/zizhufuwu/gerenyoubao/gerenyoubao.html','GeRenYouBaoChaXun')"> <img src="../../img/zizhufuwu_geren_gerenyoubao.png" width="50px" class="um-img-responsive" alt="">
+									<div  class="f14 mt5">
+										个人邮包查询
+									</div> </a>
+								</div>
+							</div>
+							<div class="um-grid-row tc">
+								<div>
+									<a href="#" class="um-circle um-black" onclick="openNewView('jcjsb','html/main/gerenjinchujingshenbao/index.html','GeRenJinChuJingShenBao')"> <img src="../../img/zizhufuwu_geren_gerenjinchujing.png" width="50px" class="um-img-responsive" alt="">
+									<div  class="f14 mt5">
+										个人进出境申报
+									</div> </a>
+								</div>
+								<div>
+									<a href="#" class="um-circle um-black" onclick="openNewView('xywpcjwt','html/zizhufuwu/xywpcjwtList.html','XingYouWuPinChangJianWenTi')"> <img src="../../img/zizhufuwu_geren_xingyouwupin.png" width="50px" class="um-img-responsive" alt="">
+									<div  class="f14 mt5">
+										行邮物品常见问题
+									</div> </a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="con_one_2" style="display:none;">
+						<div class="um-grid mt20">
+							<div class="um-grid-row tc">
+								<div class="nav-toggle" data-id="TGZT">
+									<a href="#" class="um-circle um-black"> <img src="../../img/zizhufuwu_qiye_tongguanzhuangtai.png" width="50px" class="um-img-responsive" alt="">
+									<div class="f14 mt5">
+										通关状态查询
+									</div> </a>
+								</div>
+
+								<div class="nav-toggle" data-id='CD'>
+									<a href="#" class="um-circle um-black"> <img src="../../img/zizhufuwu_qiye_cangdanchaxun.png" width="50px" class="um-img-responsive" alt="">
+									<div  class="f14 mt5">
+										舱单查询
+									</div> </a>
+								</div>
+
+								<div class="nav-toggle" >
+									<a href="#" onclick="openNewView('developping','html/main/xiaoxi/developping.html','JinChuKouQiYeXinYongGongShiXinXiChaXun')"  class="um-circle um-black"> <img src="../../img/zizhufuwu_qiye_jinchukouxinxi.png" width="50px" class="um-img-responsive" alt="">
+									<div class="f14 mt5">
+										企业信用公示信息查询
+									</div> </a>
+								</div>
+							</div>
+							<!-- 第二行 -->
+							<div class="um-grid-row tc">
+
+								<div class="nav-toggle" data-id="QGCX">
+									<a href="#" class="um-circle um-black"> <img src="../../img/zizhufuwu_qiye_qiguanxinxi.png" width="50px" class="um-img-responsive" alt="">
+									<div  class="f14 mt5">
+										企业基本信息查询
+									</div> </a>
+								</div>
+								<div class="nav-toggle">
+									<a href="#" onclick="openNewView('developping','html/main/xiaoxi/developping.html','ZhiShiChanQuanBeiAnChaXun')" class="um-circle um-black" > <img src="../../img/zizhufuwu_qiye_zhishichanquanbeian.png" width="50px" class="um-img-responsive" alt="">
+									<div  class="f14 mt5">
+										知识产权备案查询
+									</div> </a>
+								</div>
+								<div class="nav-toggle">
+									<a href="#" onclick="openNewView('developping','html/main/xiaoxi/developping.html','XingZhengShenPiShiXiangJinDuChaXun')" class="um-circle um-black"> <img src="../../img/zizhufuwu_qiye_xingzhengshenpi.png" width="50px" class="um-img-responsive" alt="">
+									<div  class="f14 mt5">
+										行政审批进度查询
+									</div> </a>
+								</div>
+
+							</div>
+							<!-- 第三行 -->
+							<div class="um-grid-row tc">
+								<div class="nav-toggle">
+									<a href="#" class="um-circle um-black" onclick="openNewView('fuwuzhinan','html/main/xiaoxi/developping.html','XingZhengShenPinFuWuZhiNan')"> <img src="../../img/zizhufuwu_qiye_fuwuzhinan.png" width="50px" class="um-img-responsive" alt="">
+									<div  class="f14 mt5">
+										行政审批服务指南
+									</div> </a>
+								</div>
+								<div class="nav-toggle">
+									<a href="#" class="um-circle um-black" onclick="openNewView('shangpinguilei','html/main/xiaoxi/developping.html','ShangPinGuiLei')"> <img src="../../img/zizhufuwu_qiye_shangpinguilei.png" width="50px" class="um-img-responsive" alt="">
+									<div  class="f14 mt5">
+										商品归类查询
+									</div> </a>
+								</div>
+								<div class="nav-toggle">
+									<!--<a href="#" class="um-circle um-black" onclick="openNewView('shuize','html/zizhufuwu/shuizeSearch.html')"> <img src="../../img/zizhufuwu_qiye_shuize.png" width="50px" class="um-img-responsive" alt="">-->
+									<a href="#" class="um-circle um-black" onclick="openNewView('shuize','html/main/xiaoxi/developping.html','ShuiZeChaXun')"> <img src="../../img/zizhufuwu_qiye_shuize.png" width="50px" class="um-img-responsive" alt="">
+									<div  class="f14 mt5">
+										税则查询
+									</div> </a>
+								</div>
+
+							</div>
+						</div>
+
+					</div>
+					<!--con2--end-->
+				</div>
+			</div>
+			<div class="moreBg none">
+				<div style="height:100%"></div>
+				<span class="cancle">X</span>
+				<div class="tc f14" id="saveList">
+					<ul class="um-list um-list-static" id="navlist"></ul>
+					<ul class="um-list um-list-static">
+						<li class="um-gray" id="cancle">
+							取消
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script>
+summerready=function(){
+		var data = [{
+			"code" : "TGZT",
+			"subMenus" : [{
+				"navName" : "报关单状态查询",
+				"text" : "baoguandan",
+				"url" : "html/main/xiaoxi/developping.html",
+				"modelId" : "BaoGuanDanZhuangTaiChaXun"
+
+			}, {
+				"navName" : "报关单基本信息查询",
+				"text" : "baoguandanjibenxinxi",
+				"url" : "html/main/xiaoxi/developping.html",
+				"modelId" : "BaoGuanDanJiBenXinXiChaXun"
+			}, {
+				"navName" : "修撤单状态查询",
+				"text" : "xiuchedan",
+				"url" : "html/main/xiaoxi/developping.html",
+				"modelId" : "XiuCheDanChaXun"
+			}]
+		}, {
+			"code" : "CD", //舱单
+			"subMenus" : [{
+				"navName" : "海空舱单信息查询",
+				"text" : "haikongcangdan",
+				"url" : "html/main/xiaoxi/developping.html",
+				"modelId" : "HaiKongCangDanXinXiChaXun"
+			}, {
+				"navName" : "公路舱单信息查询",
+				"text" : "gonglucangdan",
+				"url" : "html/main/xiaoxi/developping.html",
+				"modelId" : "GongLuCangDanXinXiChaXun"
+			}, {
+				"navName" : "公路舱单确报查询",
+				"text" : "gonglucangdan",
+				"url" : "html/main/xiaoxi/developping.html",
+				"modelId" : "GongLuCangDanQueBaoChaXun"
+			}]
+		}, {
+			"code" : "QGCX", //企管查询
+			"subMenus" : [{
+				"navName" : "企业关键信息查询",
+				"text" : "guanjianxinxi",
+				"url" : "html/main/xiaoxi/developping.html",
+				"modelId" : "QiYeGuanJianXinXiChaXun"
+			}, {
+				"navName" : "企业年报信息查询",
+				"text" : "qiyenianbao",
+				"url" : "html/main/xiaoxi/developping.html",
+				"modelId" : "QiYeNianBaoXinXiChaXun"
+			}, {
+				"navName" : "报关差错信息查询",
+				"text" : "baoguanchacuo",
+				"url" : "html/main/xiaoxi/developping.html",
+				"modelId" : "BaoGuanChaCuoXinXiChaXun"
+			}, {
+				"navName" : "报关企业注册登记申请查询",
+				"text" : "baoguanqiyezhuce",
+				"url" : "html/main/xiaoxi/developping.html",
+				"modelId" : "BaoGuanQiYeZhuCeDengJiShenQingChaXun"
+			}, {
+				"navName" : "企业认证申请查询",
+				"text" : "qiyerenzhengshenqing",
+				"url" : "html/main/xiaoxi/developping.html",
+				"modelId" : "QiYeRenZhengShenQingChaXun"
+			}, {
+				"navName" : "企业报关数据查询",
+				"text" : "qiyebaoguanshuju",
+				"url" : "html/main/xiaoxi/developping.html",
+				"modelId" : "QiYeBaoGuanShuJuChaXun"
+			}]
+		}]
+
+		$('.nav-toggle').click(function() {
+			var id = $(this).data('id');
+			if (id == undefined || '') {
+				$('body').removeClass('nav-open');
+				return false;
+			} else {
+				var htmls = "";
+				var Len = data.length;
+				for ( i = 0; i < Len; i++) {
+					var datas = data[i].subMenus;
+					if (data[i].code == id) {
+						var Lens = datas.length;
+						for ( j = 0; j < Lens; j++) {
+							htmls += '<li><a href="#" class="um-black" onclick=stopEvent(event);close();openNewView("' + datas[j].text + '","' + datas[j].url + '","' + datas[j].modelId + '")> ' + datas[j].navName + '</a></li>'
+						}
+					}
+				}
+				$(".moreBg #navlist").html(htmls);
+				$(".moreBg").removeClass("none");
+				var H = $('#saveList').height();
+				$("#saveList").css("margin-top", -H - 30 + 'px')
+			}
+
+		});
+
+		$("#cancle,.moreBg").click(function() {
+			$("#saveList").css("margin-top", 0).delay(500);
+			setTimeout(function() {
+				$(".moreBg").addClass("none");
+			}, 500);
+		});
+		function close() {
+			$("#saveList").css("margin-top", 0).delay(500);
+			$(".moreBg").addClass("none");
+
+		}
+
+	}
+</script>

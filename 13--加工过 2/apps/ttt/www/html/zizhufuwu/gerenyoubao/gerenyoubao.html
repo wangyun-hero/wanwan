@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title>个人邮包查询</title>
+		<link rel="stylesheet" href="../../../css/resetmaingxx.css">
+		<link rel="stylesheet" href="../../../css/gxxmain.css">
+		<link rel="stylesheet" href="../../../css/iuapmobile.um-2.7.0.css">
+		<link rel="stylesheet" href="../../../css/font-icons.css">
+		<link rel="stylesheet" href="../../../css/iconfont.css">
+		<link rel="stylesheet" href="../../../css/common.css">
+		<script src="../../../js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+		<script src="../../../js/summer.js" ></script>
+		<script src="../../../js/jquery-2.1.4.min.js" ></script>
+		<script src="../../../js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+		<script src="../../../js/knockout-2.2.0.js" ></script>
+		<script src="../../../js/Frameworks/iuapmobile.frameworks.listview.js" ></script>
+		<script src="../../../js/zizhufuwu/gerenyoubao/gerenyoubao.js"></script>
+	</head>
+	<style>
+        .btn-youbao {
+            border: 1px solid #ccc;
+            display: block;
+            padding: 6px 15px;
+            text-align: center;
+            border-radius: 25px;
+            margin-bottom: 10px;
+            width: 64%;
+            margin: 0 auto 20px;
+        }
+        .btn-youbao:after {
+            width: 0;
+            height: 0;
+            border-top: 6px solid transparent;
+            border-left: 12px solid #008ae0;
+            border-bottom: 6px solid transparent;
+            float: right;
+            content: "";
+            margin: 7px auto;
+        }
+        .title-heard {
+            padding: 20px 15px;
+            margin: 0 -15px;
+            font-size: 14px;
+        }
+        .title-heard.gray {
+            background-color: #f2f2f2;
+            color: #000;
+        }
+
+	</style>
+	<body>
+		<div class="um-page active" id="page">
+			<div id="pageHeader1" class="um-header um-common-header um-white">
+				<a href="#" onclick="api.closeWin()" class="um-header-left ti-angle-left" style="color:#fff;">返回</a>
+				<h3>个人邮包查询</h3>
+				<a href="#" onclick="callTell()" class="um-header-right  um-top-common iconfont um-index-dianhua">&#xe601;</a>
+				<a href="#" onclick="getSenderMess()" class="um-header-right iconfont um-index-dianhua">&#xe605;</a>
+			</div>
+
+			<div class="um-content mb20">
+				<div class="title-heard gray tc">
+					<p class="f16">
+						您想查询哪个关区的邮包信息？
+					</p>
+					<p class="f12 um-gray mt5">
+						请点击相应按钮
+					</p>
+				</div>
+				<div class="mt40">
+					<!-- <a class="btn-youbao" onclick='openView("http://app2.customs.gov.cn:8080/customs/pages/main_4.jsp")'>署令测试</a> -->
+					<a class="btn-youbao" onclick='openView("http://url.cn/2DTpeAm")'>北京海关</a>
+					<a class="btn-youbao" onclick='openView("http://182.254.131.206/parcelquery/index.aspx")'>上海海关</a>
+					<a class="btn-youbao" onclick='openView("http://wxmail.nj-customs.gov.cn/mq/search.html")'>南京海关</a>
+					<a class="btn-youbao" onclick='openView("http://url.cn/efHewu")'>杭州海关</a>
+					<a class="btn-youbao" onclick='openView("http://url.cn/29bFYou")'>厦门海关</a>
+					<a class="btn-youbao" onclick='openView("http://qdems.qdcdc.com")'>青岛海关</a>
+					<a class="btn-youbao" onclick='openView("http://fw.jncustoms.cn/jsp/public/login.jsp?fromstr=ydwpwsbl")'>济南海关</a>
+					<a class="btn-youbao" onclick='openView("http://url.cn/2E58YW3")'>广州海关</a>
+					<a class="btn-youbao" onclick='openView("http://www.fjfzems.com")'>福州海关</a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script>
+
+</script>

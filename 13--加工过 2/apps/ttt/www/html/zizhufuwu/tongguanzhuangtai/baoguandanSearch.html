@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title>报关单查询 </title>
+		<link rel="stylesheet" href="../../../css/gxxmain.css">
+		<link rel="stylesheet" href="../../../css/iuapmobile.um-2.7.0.css">
+		<link rel="stylesheet" href="../../../css/font-icons.css">
+		<link rel="stylesheet" href="../../../css/iconfont.css">
+		<link rel="stylesheet" href="../../../css/common.css">
+		<link rel="stylesheet" href="../../../css/tongguan.css">
+		<link rel="stylesheet" href="../../../css/resetmaingxx.css">
+		<script src="../../../js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+		<script src="../../../js/summer.js" ></script>
+		<script src="../../../js/jquery-2.1.4.min.js" ></script>
+		<script src="../../../js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+		<script src="../../../js/knockout-2.2.0.js" ></script>
+		<script src="../../../js/zizhufuwu/tongguanzhuangtai/baoguandan.js"></script>
+	</head>
+	<body>
+		<div class="um-page active" id="page1">
+			<!-- top--头部 -->
+			<div id="pageHeader1" class="um-header um-common-header um-white">
+				<a href="#" onclick="api.closeWin()" class="um-header-left ti-angle-left" style="color:#fff;">返回</a>
+				<h3>报关单状态查询</h3>
+				<a href="#" onclick="callTell()" class="um-header-right  um-top-common iconfont um-index-dianhua">&#xe601;</a>
+				<a href="#" onclick="getSenderMess()" class="um-header-right iconfont um-index-dianhua">&#xe605;</a>
+			</div>
+
+			<div class="um-content">
+				<div style="width:80px;height:80px;margin:0 auto;margin-top:10%;">
+					<img src="../../../img/index_gerenyoubaochaxun.png" style="width:100%;height:100%"/>
+				</div>
+				<p class="f12" style="margin-top:3%;text-align:center;color:#7F7F7F">
+					*查询可能需要一定的时间,请您耐心等待
+				</p>
+
+				<div class="gxx-regist" style="margin-top:16%;">
+					<div class="pr mt10">
+						<input id="baoguan_search" class="form-control" type="text" placeholder="请输入报关单号">
+						<span class="um-input-clear ti-close" onclick="clearTxt()"></span>
+					</div>
+				</div>
+				<div class="btnCon mt40 mb20">
+					<a class="btn" id='search_btn'>查 询</a>
+				</div>
+			</div>
+		</div>
+		<!--page1 end-->
+		<div class="um-page" id="page2">
+			<!-- top--头部 -->
+			<div id="pageHeader2" class="um-header um-common-header um-white">
+				<a href="#" onclick="api.closeWin()" class="um-header-left ti-angle-left" style="color:#fff;">返回</a>
+				<h3>报关单状态查询</h3>
+				<a href="#" onclick="callTell()" class="um-header-right  um-top-common iconfont um-index-dianhua">&#xe601;</a>
+				<a href="#" onclick="getSenderMess()" class="um-header-right iconfont um-index-dianhua">&#xe605;</a>
+			</div>
+
+			<div class="um-content">
+				<div class="um-row">
+					<div class="title-heard blue tc">
+						报关单号1234567787信息
+						<br>
+						<a class="btn tongguan_btn" id="dingyue_btn">+订阅</a>
+					</div>
+				</div>
+				<div class="gxx-list" id="listview" style="margin:30px 15px;border-width:0">
+					<div class="um-process" data-bind="foreach:data">
+						<a href="#" class="um-list-item">
+						<div class="um-list-item-inner">
+							<div class="um-list-item-body ml15" style="padding:5px 0">
+								<p class="f14">
+									<span data-bind="text:status" class="f16"></span></span>
+								</p>
+								<p class="um-gray um-text-overflow2 mt5" data-bind="text: time"></p>
+								<div class="f14">
+									<span class="um-blue" onclick="ToggleShow(this)"><i class="current">+</i>回执内容</span>
+									<p data-bind="text:info" class="db none">
+										ssssss
+									</p>
+								</div>
+							</div>
+						</div> </a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--page2 end-->
+		<div class="um-page" id="page3">
+			<!-- top--头部 -->
+			<div id="pageHeader1" class="um-header um-common-header um-white">
+				<a href="#" onclick="api.closeWin()" class="um-header-left ti-angle-left" style="color:#fff;">返回</a>
+				<h3>报关单状态查询</h3>
+				<a href="#" onclick="callTell()" class="um-header-right  um-top-common iconfont um-index-dianhua">&#xe601;</a>
+				<a href="#" onclick="getSenderMess()" class="um-header-right iconfont um-index-dianhua">&#xe605;</a>
+			</div>
+
+			<div class="um-content um-bgc-gray">
+				<img src="../../../img/noresults.png" alt="网络不给力" width="60%" style="margin-top:30%"/>
+				<p class="f14 mt30 mb10">
+					对不起，没有查询到结果！
+				<p>
+				<p class="f12 um-gray">
+					请核对您输入的查询条件
+					<br>
+					如有其它问题，可联系12360海关服务热线
+				</p>
+				<div class="btnCon mt40 mb20">
+					<a class="btn" onclick="toPage('#page1')">返回</a>
+				</div>
+			</div>
+		</div>
+		<!--page3 end-->
+		<div class="moreBg none">
+			<div style="height:100%"></div>
+			<div class="tc f14" id="successTip" onclick='stopEvent(event)'>
+				<h3><i class="ti-check vm"> </i>订阅成功</h3>
+				<p>
+					*本次订阅有效期为30天，超期后请重新订阅。
+				</p>
+				<div class="btnCon mt40 mb20">
+					<a class="btn" id='commit_btn'>确定</a>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>

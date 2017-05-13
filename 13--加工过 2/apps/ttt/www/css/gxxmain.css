@@ -1,0 +1,287 @@
+.gxx-li-bj{
+  background:#E5ECF4;
+}
+.gxx-pad{
+ margin:0 21px;
+ padding:0 15px;
+}
+/* 轮播下方弹性盒的样式 */
+.gxx-grid-row-erea{  
+ border-right:1px solid #DFDFDF;
+ text-align:center;
+}
+.gxx-grid-row-erea:last-child{
+  border:none;
+}
+
+/* 去除um-list um-list列表行的激活背景状态 */
+.um-no-active.gxx-list .um-list-item:active {
+  background-color: inherit;
+}
+.um-no-active.gxx-list .btn:active, .um-no-active.gxx-list .um-btn:active {
+  background-color: inherit;
+}
+.um-no-icon:before, .um-no-icon.um-list-item:after {
+  content: none !important;
+}
+.gxx-list .btn, .gxx-list .um-btn, .um-actionsheet .btn, .um-actionsheet .um-btn, .um-poppicker .btn, .um-poppicker .um-btn, .um-modal .um-modal-btns .btn, .um-modal .um-modal-btns .um-btn {
+  border-color: transparent;
+  border-radius: 0;
+}
+.um-list .btn:active, .um-list .um-btn:active, .um-actionsheet .btn:active, .um-actionsheet .um-btn:active, .um-poppicker .btn:active, .um-poppicker .um-btn:active, .um-modal .um-modal-btns .btn:active, .um-modal .um-modal-btns .um-btn:active, .um-list .active.btn, .um-list .active.um-btn, .um-actionsheet .active.btn, .um-actionsheet .active.um-btn, .um-poppicker .active.btn, .um-poppicker .active.um-btn, .um-modal .um-modal-btns .active.btn, .um-modal .um-modal-btns .active.um-btn {
+  box-shadow: none;
+  background-color: rgba(230, 230, 230, 0.95);
+}
+.um-content.um-content-fill .um-list, .um-content.um-content-fill .um-check-group, .um-content.um-content-fill .um-input-search, .um-content.um-content-fill .um-label {
+  margin-left: 0;
+  margin-right: 0;
+}
+.gxx-list {
+  margin: 10px -15px;
+  background: #fff;
+  overflow: hidden;
+  position: relative;
+ -webkit-border-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAECAYAAABP2FU6AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAB5JREFUeNpiPnH8zH/G////MzAxAAHTyRNn/wMEGABpvQm9g9TJ1QAAAABJRU5ErkJggg==") 2 0 stretch;
+  border-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAECAYAAABP2FU6AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAB5JREFUeNpiPnH8zH/G////MzAxAAHTyRNn/wMEGABpvQm9g9TJ1QAAAABJRU5ErkJggg==") 2 0 stretch;
+  border-width: 1px 0 1px 0;
+  /* 圆角列表 */
+  /* 底线铺满的列表 */
+  /* 嵌套列表 */
+  /* 列表行单元 */
+  /* 行链接 */
+}
+.gxx-list:empty {
+  border-width: 0;
+}
+.gxx-list.um-list-corner {
+  margin: 0;
+  border: 0;
+  border-radius: 5px;
+}
+.gxx-list.um-list-full .um-list-item {
+  padding-left: 0;
+}
+.gxx-list.um-list-full .um-list-item-inner {
+  padding-left: 15px;
+}
+.gxx-list .um-list {
+  margin: 0;
+  border-width: 0;
+  padding-left: 30px;
+}
+.gxx-list > li:last-child > .um-list-item .um-list-item-inner:after,
+.gxx-list > .um-list-item:last-child .um-list-item-inner:after, .um-list .um-list li:last-child .um-list-item-inner:after, .um-list .um-list > .um-list-item:last-child {
+  border-width: 0;
+}
+.gxx-list .um-list-item {
+  position: relative;
+  display: -webkit-box;
+  display: box;
+  -webkit-box-align: center;
+  box-align: center;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  padding: 0px;
+  padding-left: 0px;
+  color: #000;
+  font-size:14px;
+  transition: all ease .3s;
+
+}
+.gxx-list a.um-list-item {
+  cursor: pointer;
+}
+.gxx-list a.um-list-item:active, .um-list a.um-list-item.active {
+  background-color: rgba(230, 230, 230, 0.95);
+}
+.gxx-list a.um-list-item:before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-left: 2px solid #c2c2c2;
+  border-bottom: 2px solid #c2c2c2;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0, -50%) rotate(-135deg);
+  transform: translate(0, -50%) rotate(-135deg);
+  right: 7%;
+  z-index: 2;
+}
+.gxx-list .um-list-item-media {
+  /* margin-right: 12px; */
+  display: -webkit-box;
+  display: box;
+  -webkit-box-align: center;
+  box-align: center;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  z-index: 1;
+/*   padding-top: 5px;
+  padding-bottom: 5px; */
+}
+.gxx-list .um-list-item-inner {
+  position: relative;
+  display: -webkit-box;
+  display: box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  -webkit-align-self: stretch;
+  align-self: stretch;
+  /* 用伪类解决swipe-action一根红线的bug,因为不占空间？*/
+  z-index: 1;
+  padding: 9px;
+}
+.gxx-list .um-list-item-inner:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-border-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAECAYAAABP2FU6AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAB5JREFUeNpiPnH8zH/G////MzAxAAHTyRNn/wMEGABpvQm9g9TJ1QAAAABJRU5ErkJggg==") 2 0 stretch;
+  border-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAECAYAAABP2FU6AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAB5JREFUeNpiPnH8zH/G////MzAxAAHTyRNn/wMEGABpvQm9g9TJ1QAAAABJRU5ErkJggg==") 2 0 stretch;
+  border-width: 0 0 1px 0;
+/*   border-bottom:1px solid #ccc; */
+}
+.gxx-list .um-list-item-body {
+  -webkit-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  -webkit-align-self: stretch;
+  align-self: stretch;
+}
+.gxx-list .um-list-item-left {
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+  width: 35%;
+}
+.gxx-list .um-list-item-right {
+  padding-left: 5px;
+  text-align: right;
+  -webkit-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  -webkit-flex-shrink: 1;
+  flex-shrink: 1;
+}
+.gxx-list .form-control {
+  -webkit-appearance: none;
+  appearance: none;
+  box-sizing: border-box;
+  border: none;
+  background: 0 0;
+  border-radius: 0;
+  box-shadow: none;
+  display: block;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  color: #000;
+  height: 100%;
+  text-align:right;
+  padding: 0px;
+  outline:none;
+}
+
+.gxx-list textarea.form-control {
+  height: 64px;
+}
+.gxx-list.um-list-static > li {
+  padding: 9px;
+  -webkit-border-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAECAYAAABP2FU6AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAB5JREFUeNpiPnH8zH/G////MzAxAAHTyRNn/wMEGABpvQm9g9TJ1QAAAABJRU5ErkJggg==") 2 0 stretch;
+  border-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAECAYAAABP2FU6AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAB5JREFUeNpiPnH8zH/G////MzAxAAHTyRNn/wMEGABpvQm9g9TJ1QAAAABJRU5ErkJggg==") 2 0 stretch;
+  border-width: 0 0 1px 0;
+}
+.gxx-list.um-list-static > li:last-child {
+  border-width: 0;
+}
+.gxx-list.um-list-static > li > .btn, .um-list.um-list-static > li > .um-btn {
+  margin: -9px -12px;
+  width: calc(100% + 24px);
+}
+.gxx-list a.btn:before, .um-list a.um-btn:before {
+  right: 10px;
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-left: 2px solid #c2c2c2;
+  border-bottom: 2px solid #c2c2c2;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0, -50%) rotate(-135deg);
+  transform: translate(0, -50%) rotate(-135deg);
+}
+.gxx-list .gxx-list > li:first-child .btn, .gxx-list .gxx-list > li:first-child .um-btn,
+.gxx-list > .btn:first-child,
+.gxx-list > .um-btn:first-child {
+  -webkit-border-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAECAYAAABP2FU6AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAB5JREFUeNpiPnH8zH/G////MzAxAAHTyRNn/wMEGABpvQm9g9TJ1QAAAABJRU5ErkJggg==") 2 0 stretch;
+  border-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAECAYAAABP2FU6AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAB5JREFUeNpiPnH8zH/G////MzAxAAHTyRNn/wMEGABpvQm9g9TJ1QAAAABJRU5ErkJggg==") 2 0 stretch;
+  border-width: 1px 0 1px 0;
+}
+.gxx-list .gxx-list .btn, .gxx-list .gxx-list .um-btn {
+  padding-left: 0;
+}
+.gxx-list .btn, .gxx-list .um-btn {
+  transition: all ease 0.3s;
+  text-align: left;
+  color: #282828;
+  -webkit-border-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAECAYAAABP2FU6AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAB5JREFUeNpiPnH8zH/G////MzAxAAHTyRNn/wMEGABpvQm9g9TJ1QAAAABJRU5ErkJggg==") 2 0 stretch;
+  border-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAECAYAAABP2FU6AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAB5JREFUeNpiPnH8zH/G////MzAxAAHTyRNn/wMEGABpvQm9g9TJ1QAAAABJRU5ErkJggg==") 2 0 stretch;
+  border-width: 0 0 1px 0;
+}
+.gxx-list > li:last-child > .btn, .um-list > li:last-child > .um-btn,
+.gxx-list > .btn:last-child,
+.gxx-list > .um-btn:last-child, .gxx-list > li:last-child .gxx-list .um-list-item-inner{
+  border-width: 0;
+}
+.gxx-list a.um-collapse-btn:before {
+  transition: all ease .3s;
+  -webkit-transform: translate(0, -50%) rotate(135deg);
+  transform: translate(0, -50%) rotate(135deg);
+}
+
+.gxx-list .um-open > a.um-collapse-btn:before {
+  -webkit-transform: translate(0, -50%) rotate(-45deg);
+  transform: translate(0, -50%) rotate(-45deg);
+}
+.um-actionsheet .gxx-list.um-list-corner {
+  margin-bottom: 6px;
+}
+/* index */
+#applistview .gxx-list{
+border:none;
+}
+#applistview .um-list-item-inner{
+border:none;
+padding:0;
+}
+#applistview .um-list-item-inner:after{
+border:none;
+}
+#applistview .um-list-item-body{
+padding:9px
+}
+.um-list .um-list-item-body{
+	padding:10px 25px 10px 0!important;
+}

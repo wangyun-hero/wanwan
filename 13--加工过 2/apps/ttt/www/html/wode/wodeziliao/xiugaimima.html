@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../../css/resetmaingxx.css">
+		<link rel="stylesheet" href="../../../css/gxxmain.css">
+		<link rel="stylesheet" href="../../../css/iuapmobile.um-2.7.0.css">
+		<link rel="stylesheet" href="../../../css/font-icons.css">
+		<link rel="stylesheet" href="../../../css/iconfont.css">
+		<link rel="stylesheet" href="../../../css/common.css">
+		<script src="../../../js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+		<script src="../../../js/summer.js" ></script>
+		<script src="../../../js/jquery-2.1.4.min.js" ></script>
+		<script src="../../../js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+		<script src="../../../js/knockout-2.2.0.js" ></script>
+		<script src="../../../js/Frameworks/iuapmobile.frameworks.listview.js" ></script>
+		<script type="text/javascript" src="../../../js/jquery-mvalidate.js"></script>
+	</head>
+	<body>
+		<div class="um-page um-bgc-gray">
+			<div id="pageHeader" class="um-header um-common-header" style="color:#FFFFFF;position: relative;background-image: url('../../../img/logo.png');background-repeat:no-repeat; background-size: 58px 35px;background-position:50% 90%;">
+				<a href="#" onclick="api.closeWin()" class="um-header-left ti-angle-left" style="color:#fff;">我的资料</a>
+				<h3 style="opacity:0;">标题</h3>
+				<a href="#" onclick="callTell()" class="um-header-right  um-top-common iconfont um-index-dianhua">&#xe601;</a>
+				<a href="#" onclick="getSenderMess()" class="um-header-right iconfont um-index-dianhua">&#xe605;</a>
+			</div>
+
+			<div class="um-content">
+			<form id="editPwdForm" onsubmit="return false;">
+				<div class="gxx-mainpassword">
+					<div>
+						<h6 class="gxx-h6">原始密码</h6>
+						<div class="pr">
+							<input type="password" id="oldpwd" placeholder="原始密码" class="form-control" data-required="true" data-descriptions="password"/>
+							<span class="um-input-clear ti-close" onclick="clearTxt(this)"></span>
+						</div>
+					</div>
+					<div>
+						<h6 class="gxx-h6">新密码</h6>
+						<div class="pr">
+							<input type="password" id="newpwd" placeholder="新密码" class="form-control" data-required="true" data-descriptions="password"/>
+							<span class="um-input-clear ti-close" onclick="clearTxt(this)"></span>
+						</div>
+					</div>
+					<div>
+						<h6 class="gxx-h6">确认新密码</h6>
+						<div class="pr">
+							<input type="password" id="renewpwd" placeholder="确认新密码" class="form-control" data-required="true" data-descriptions="confirmpassword" data-conditional="confirmpwd"/>
+							<span class="um-input-clear ti-close" onclick="clearTxt(this)"></span>
+						</div>
+					</div>
+
+					<a href="#" id="wangjimima" class="gxx-forget f14">忘记密码？</a>
+					<div class="btnCon mt40">
+						<input type="submit" class="btn" value="提交"/>
+					</div>
+				</div>
+				</form>
+			</div>
+
+		</div>
+		<script src="../../../js/wode/wodeziliao/xiugaimima.js" ></script>
+	</body>
+</html>

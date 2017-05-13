@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html style="background:#ffffff">
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../css/resetmaingxx.css">
+		<link rel="stylesheet" href="../../css/iuapmobile.um-2.7.0.css">
+		<link rel="stylesheet" href="../../css/font-icons.css">
+		<link rel="stylesheet" href="../../css/iconfont.css">
+		<link rel="stylesheet" href="../../css/common.css">
+		<script src="../../js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+		<script src="../../js/summer.js" ></script>
+		<script src="../../js/doT.min.js" ></script>
+		<script src="../../js/jquery-2.1.4.min.js" ></script>
+		<script src="../../js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+		<script src="../../js/knockout-2.2.0.js" ></script>
+		<script src="../../js/Frameworks/iuapmobile.frameworks.listview.js" ></script>
+		<script src="../../js/kefuzhongxin/zaixianzixunDetail.js" ></script>
+	</head>
+	<body>
+		<div class="um-page" style="background:#f4f4f4;">
+			<div id="pageHeader" class="um-header  um-common-header" style="color:#FFFFFF;position: relative;background-image: url('../../img/logo.png');background-repeat:no-repeat; background-size: 58px 35px;background-position:50% 90%;">
+				<a href="#" onclick="api.closeWin()" class="um-header-left ti-angle-left" style="color:#fff;">咨询消息</a>
+				<!-- <div id="viewTitle" class="um-common-img maindiv">
+				<img src="../../img/logo.png" alt="" class="headerimg">
+				</div> -->
+				<h3 style="opacity:0;">标题</h3>
+				<a href="#" onclick="callTell()" class="um-header-right  um-top-common iconfont um-index-dianhua">&#xe601;</a>
+				<a href="#" onclick="getSenderMess()" class="um-header-right iconfont um-index-dianhua">&#xe605;</a>
+			</div>
+
+			<div class="um-content">
+				<div class="cicle tr" id="more">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+
+				<div class="mb10">
+					<div class="um-row um-bgc-white">
+						<div class="um-grid-row">
+							<div>
+								<p id="fenleiV" class="f18"></p>
+								<p id="contentV" class="f16"></p>
+								<p id="releasetimeV" class="gxx-timep um-gray"></p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div id="listview">
+					<div class="um-row um-bgc-white">
+						<script id="dataTemp" type="text/x-dot-template">
+							{{for(var i=0;i<it.length;i++){}}
+							<div class="um-grid-row" style="border-bottom:1px dotted #ccc;">
+							<div>
+							<p class="tl f14">{{=it[i].content}}</p>
+							<p class="tr f12 um-gray">{{=it[i].replytime}}</p>
+							</div>
+							</div>
+							{{{}}
+						</script>
+
+					</div>
+				</div>
+				<div id="empty" class="none" >
+					<span>暂无记录！</span>
+				</div>
+			</div>
+		</div>
+		<div class="moreBg none">
+			<div style="height:100%"></div>
+			<div class="tc f14" id="saveList">
+				<ul class="um-list um-list-static">
+					<li onclick="myConnetions1('ZCFG',this.name)">
+						收藏
+					</li>
+					<li>
+						微信好友
+					</li>
+					<li>
+						朋友圈
+					</li>
+					<li>
+						QQ
+					</li>
+					<li>
+						QQ空间
+					</li>
+					<li>
+						新浪微博
+					</li>
+				</ul>
+				<ul class="um-list um-list-static">
+					<li class="um-red" id="cancle">
+						取消
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
+<script>
+	$(function() {
+		$("#more").click(function() {
+			$(".moreBg").removeClass("none");
+			var H = $('#saveList').height();
+			$("#saveList").css("margin-top", -H - 10 + 'px')
+		});
+		$("#cancle").click(function() {
+			$("#saveList").css("margin-top", 0).delay(500);
+			setTimeout(function() {
+				$(".moreBg").addClass("none");
+			}, 500);
+
+		});
+
+	});
+	function myConnetions1(type, id) {
+		alert("收藏成功");
+		$("#saveList").css("margin-top", 0).delay(500);
+		setTimeout(function() {
+			$(".moreBg").addClass("none");
+		}, 500);
+	}
+</script>

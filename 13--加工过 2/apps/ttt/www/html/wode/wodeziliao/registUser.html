@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../../css/resetmaingxx.css">
+		<link rel="stylesheet" href="../../../css/gxxmain.css">
+		<link rel="stylesheet" href="../../../css/iuapmobile.um-2.7.0.css">
+		<link rel="stylesheet" href="../../../css/font-icons.css">
+		<link rel="stylesheet" href="../../../css/iconfont.css">
+		<link rel="stylesheet" href="../../../css/common.css">
+		<script src="../../../js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+		<script src="../../../js/summer.js" ></script>
+		<script src="../../../js/jquery-2.1.4.min.js" ></script>
+		<script src="../../../js/mobiscroll.custom-3.0.0.min.js" ></script>
+		<script src="../../../js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+		<script type="text/javascript" src="../../../js/jquery-mvalidate.js"></script>
+
+	</head>
+	<body>
+		<div class="um-page" style="background:#F2F2F2">
+			<div class="um-header um-common-header" id="pageHeader">
+				<a href="#" onclick="api.closeWin()" class="um-header-left ti-angle-left" style="color:#fff;">返回</a>
+				<h3 class="um-common-ht3">注册</h3>
+				<a href="#" onclick="callTell()" class="um-header-right  um-top-common iconfont um-index-dianhua">&#xe601;</a>
+				<a href="#" onclick="getSenderMess()" class="um-header-right iconfont um-index-dianhua">&#xe605;</a>
+			</div>
+
+			<div class="um-content">
+				<form id="registForm" onsubmit="return false;">
+			
+					<div class="gxx-regist">
+						<div>
+							<h6 class="gxx-h6">用户名<span id="tip" class="um-red tip">用户名已存在！</span></h6>
+							<div class="pr">
+								<input id="username" type="text" placeholder="请输入用户名" class="form-control" data-required="true" data-descriptions="username"/>
+								<span class="um-input-clear ti-close" onclick="clearTxt(this)"></span>
+							</div>
+						</div>
+						<div>
+							<h6 class="gxx-h6">登录密码<span id="passwordtip" class="um-red tip"></span></h6>
+							<div class="pr">
+								<input id="pwd" type="password" placeholder="请输入密码" class="form-control" data-required="true" data-descriptions="password"/>
+								<span class="um-input-clear ti-close" onclick="clearTxt(this)"></span>
+							</div>
+						</div>
+						<div>
+							<h6 class="gxx-h6">确认密码</h6>
+							<div class="pr">
+								<input id="repwd" type="password" placeholder="请再次输入密码" class="form-control" data-required="true" data-descriptions="confirmpassword" data-conditional="confirmpwd"/>
+								<span class="um-input-clear ti-close" onclick="clearTxt(this)"></span>
+							</div>
+						</div>
+						<div>
+							<h6 class="gxx-h6">手机号码</h6>
+							<div class="pr">
+								<input id="phone" type="text" placeholder="请输入手机号码" class="form-control" data-validate="phone" data-describedby="phone-description" />
+								<span class="um-input-clear ti-close" onclick="clearTxt(this)"></span>
+							</div>
+							<div id="phone-description"></div>
+						</div>
+
+						<div class="pr mt10">
+							<input id="yzm" type="text" placeholder="请输入验证码" class="form-control" data-validate="code" data-describedby="code-description"/>
+							<input id="getPhoneYZM" type="button" value="点击获取" class="gxx-clickbtn" style="outline:none;" onclick="makeYZM()"/>
+						</div>
+						<div class="mt10">
+							<select class="form-control" id="cardType">
+								<option value="1">身份证</option>
+								<option value="2">港澳通行证</option>
+								<option value="3">护照</option>
+								<option value="4">港澳身份证</option>
+							</select>
+						</div>
+
+						<div class="mt10">
+							<h6 class="gxx-h6">证件号码</h6>
+							<div class="pr">
+								<input id="idCard" type="text" placeholder="请输入身份证号码" class="form-control" data-validate="cardId" data-describedby="cardId-description" />
+								<span class="um-input-clear ti-close" onclick="clearTxt(this)"></span>
+							</div>
+						</div>
+						<div class="btnCon mt40">
+							<input type="submit" value="注册" class="btn" id="registbtn">
+						</div>
+						
+						<p class="tiptext f12 um-red mt20">
+							*密码应为8~16个字符，至少需要包括大写、小写字母和数字，可使用半角特殊字符。
+						</p>
+					</div>
+					</form>
+			
+			</div>
+			<script src="../../../js/wode/wodeziliao/registUser.js" ></script>
+	</body>
+</html>

@@ -1,0 +1,57 @@
+{
+    "summary": {
+        "appname": "用友移动门户",
+        "icon": "xxx.png",
+        "version": 1,
+        "versionname": "1.0",
+        "ios": {
+            "bundleid": "com.cscec3.mdmpush",
+            "codeSigningIdentity": "xxxx.p12",
+            "sodeSigningPassword": "123456",
+            "provisioningProfile": "xxxx.mobileprovision",
+            "infoPlist": {
+                "NSLocationAlwaysUsageDescription": "开启定位服务"
+            }
+        },
+        "android": {
+            "packagename": "xxxx",
+            "signfile": "xxxx.key",
+            "keyStorePassword": "",
+            "keyalias": "",
+            "KeyPassword": ""
+        }
+    },
+    "services": {
+        "location": "",
+        "version": ""
+    },
+    "startup": {
+        "startimage": "launch.png",
+        "type": "summer",
+        "target": "/www/xxx/index.html",
+        "summerappid": ""
+    },
+    "sheet": [
+              {
+              "type": "native",
+              "target": "HomePageViewController",
+              "summerappid": ""
+              },
+              {
+              "type": "native",
+              "target": "SelfServiceViewController",
+              "summerappid": "xxx"
+              },
+              {
+              "type": "native",
+              "target": "ServiceCenterViewController",
+              "summerappid": "xxx"
+              },
+              {
+              "type": "native",
+              "target": "MineViewController",
+              "summerappid": "xxx"
+              } 
+              ],
+    "theme": "theme.json"
+}

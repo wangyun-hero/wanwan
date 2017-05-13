@@ -1,0 +1,225 @@
+/* tongguan */
+.um-list .um-list-item-inner:after {
+	border-bottom: 1px solid #ccc;
+	}
+	.um-process  .um-list-item-inner{
+
+	margin-left: 25px;
+	padding: 0px 0 10px;
+	margin-top: 10px;
+	}
+	.um-process {
+	margin-left: 15px;
+	}
+	.um-process .um-list-item {
+	position: relative;
+	border-left: 3px solid #C6D9F1;
+	}
+	.um-process .um-list-item:before {
+	content: none !important;
+	}
+	.um-process .um-list-item:after {
+	content: "";
+	width: 10px;
+	height: 10px;
+	background: #7F7F7F;
+	border-radius: 15px;
+	position: absolute;
+	left: -6px;
+	top: 18px;
+	}
+	.um-process .um-list-item:first-child:after {
+	background: url(../img/circle.png);
+	background-size:100%;
+	width:20px;
+	height:20px;
+	margin-left:-6px;
+
+	}
+	.um-process .um-list-item:last-child:after {
+	background: #999;
+	}
+
+	.um-process .gxx-list .um-list-item-inner{
+	margin-left: 25px;
+	padding: 9px 0;
+	}
+
+	.title-heard{
+	padding: 20px 15px;
+	margin:0 -15px;
+	font-size:14px;
+	}
+	.title-heard.white{
+	background: #fff;
+	color:#000;
+	}
+	.title-heard.blue{
+	background: #336AA9;
+	color:#fff;
+	}
+
+	.showCont{
+	margin-top:0;
+	}
+	.tongguan_title {
+	padding: 15px;
+	background: #f2f2f2;
+	}
+	.qiguan_title {
+	padding:10px 35px;
+	background: #fff;
+	}
+	.qiguan_title p em {
+	margin-right: 10px;
+	font-style: normal;
+	}
+	.tongguan_btn {
+	display: inline-block;
+	width:initial;
+	height: 34px;
+	line-height: 34px;
+	background: #FFFF99;
+	color: #004593;
+	padding: 0 10%;
+	border: none;
+	border-radius: 25px;
+	margin: 10px auto 0;
+	}
+	.um-card .um-list-item-inner {
+	border-radius: 5px;
+	background: #ffffff;
+	padding: 0px 10px 10px;
+	margin-bottom: 10px;
+	border: 2px solid #d9d9d9;
+	}
+	.um-card a{
+	color:#7F7F7F;
+	}
+	.um-card .um-xs-12 em,.um-card .um-xs-12 span  {
+	font-style: normal;
+	display: inline-block;
+	width:50%;
+	}
+	.um-card .um-xs-6 em{
+	font-style: normal;
+	display: inline-block;
+	margin-right:5px;
+	}
+
+	.um-card .card-title{
+	border-bottom: 1px solid #d9d9d9;
+	font-size:14px;
+	color:#7F7F7F;
+	position: relative;
+	height: 41px;
+	padding-left: 15px;
+	}
+	.um-card .card-title .tips{
+	min-width: 50px;
+	padding: 16px;
+	position: absolute;
+	top: -10px;
+	right: -10px;
+	border-top-right-radius: 4px;
+	font-size:12px;
+	}
+	.um-card .card-title h5{
+	margin-top: 10px;
+	margin-bottom: 0px;
+	font-weight:normal;
+	}
+	.um-card label{
+	display:inline;
+	}
+	.tips i,.tips em,.card-info em{
+	font-style:normal;
+	}
+	.card-info span{
+	color:#000;
+	}
+	.current{
+	display: inline-block;
+	width:15px;
+	font-style: normal;
+	}
+	.tips-darkblue{
+	background:#31859C;
+	color:#fff;
+	}
+	.tips-lightgreen{
+	background:#9BBB59;
+	color:#fff;
+	}
+	.tips-darkgreen{
+	background:#4BACC6;
+	color:#fff;
+	}
+	.tips-lightpurple{
+	background:#B688CA;
+	color:#fff;
+	}
+	.tips-darkpurple{
+	background:#8796D5;
+	color:#fff;
+	}
+	/* tab */
+	.Artical > div {
+	display: none;
+	color: #000;
+	}
+	.Artical > .active {
+	display: block;
+	}
+
+	.dls {
+	font-size: 14px;
+	margin-bottom: 10px;
+	}
+	.dls dt {
+	display: inline-block;
+	width: 25%;
+	}
+	.dls dd {
+	display: inline-block;
+	width: 70%;
+	}
+	.dls dd .form-control {
+	width: 100%;
+	}
+	
+.gxx-regist .form-control {
+	width: 100%;
+	font-size: 14px;
+}
+.tongji-card ul {
+	border-top: 1px solid #ccc;
+}
+.tongji-card li {
+	display: inline-block;
+	width: 50%;
+	float: left;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	padding: 20px 0 20px 25px;
+}
+.tongji-card li:nth-child(even) {
+	border-right: none;
+}
+.tongji-card h4 {
+	color: #8064A2;
+}
+.tongji-card h4 span {
+	font-size: 30px;
+	margin-right: 20px;
+}
+#successTip {
+	background: #fff;
+	padding: 20px;
+	margin: 0 20px;
+}
+#successTip h3 {
+	font-size: 20px;
+	color: #77933C;
+	font-weight: normal;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../../css/resetmaingxx.css">
+		<link rel="stylesheet" href="../../../css/iuapmobile.um-2.7.0.css">
+		<link rel="stylesheet" href="../../../css/font-icons.css">
+		<link rel="stylesheet" href="../../../css/iconfont.css">
+		<link rel="stylesheet" href="../../../css/common.css">
+		<link rel="stylesheet" href="../../../css/iuapmobile.um.listview-2.7.0.css">
+		<script src="../../../js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+		<script src="../../../js/summer.js" ></script>
+		<script src="../../../js/jquery-2.1.4.min.js" ></script>
+		<script src="../../../js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+		<script src="../../../js/knockout-2.2.0.js"></script>
+		<script src="../../../js/Frameworks/iuapmobile.frameworks.listview.js"></script>
+		<script src="../../../js/main/tongguancanshu.js" ></script>
+	</head>
+	<body>
+		<div class="um-page" id="index">
+			<div id="pageHeader" class="um-header  um-common-header" style="color:#FFFFFF;position: relative;background-image: url('../../../img/logo.png');background-repeat:no-repeat; background-size: 58px 35px;background-position:50% 90%;">
+			<a href="#" onclick="api.closeWin()" class="um-header-left ti-angle-left" style="color:#fff;">通关参数</a>
+			<h3 style="opacity:0;">标题</h3>
+			<a href="#" onclick="callTell()" class="um-header-right  um-top-common iconfont um-index-dianhua">&#xe601;</a>
+			<a href="#" onclick="getSenderMess()" class="um-header-right iconfont um-index-dianhua">&#xe605;</a>
+		</div>
+			<div class="gxx-content" style="background:#fff;">
+				<div class="um-listview-wrap" id="listview" >
+					<ul class="um-list um-no-active" data-bind="foreach:data">
+						<li class="um-listview-row um-tongguancanshu-li" >
+							<a href="#" class="um-list-item um-swipe-action um-no-icon">
+								<div class="um-list-item-inner gxx-li-pubbord" style="width:348.75px;">
+									<div class="um-list-item-body um-tongguancanshu-list" style="padding-left:10px; height:75px">
+										<h4 class="um-media-heading fb um-text-overflow"  data-bind="text: modelName"></h4>
+										<p class="um-gray f14 um-text-overflow gxx-text-width"  data-bind="text: descriptions"></p>
+									</div>
+									<div class="gxx-imgdiv"  data-bind="style: {backgroundColor: tongguancanshurgb}">
+										<img alt="" src="../../../img/tongguancanshu_right.png" width=76  data-bind="attr:{'src': img}">
+									</div>
+								</div> 
+							</a>
+						</li>				
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

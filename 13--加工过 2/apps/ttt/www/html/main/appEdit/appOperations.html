@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../../css/gxxmain.css">
+		<link rel="stylesheet" href="../../../css/resetmaingxx.css">
+		<link rel="stylesheet" href="../../../css/iuapmobile.um-2.7.0.css">
+		<link rel="stylesheet" href="../../../css/font-icons.css">
+		<link rel="stylesheet" href="../../../css/iconfont.css">
+		<link rel="stylesheet" href="../../../css/common.css">
+		<link rel="stylesheet" href="../../../css/tongguancanshu.css">
+		<link rel="stylesheet" href="../../../css/iuapmobile.um.listview-2.7.0.css">
+		<script src="../../../js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+		<script src="../../../js/summer.js" ></script>
+		<script src="../../../js/jquery-2.1.4.min.js" ></script>
+		<script src="../../../js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+		<script type="text/javascript" src="../../../js/knockout-2.2.0.js"></script>
+		<script type="text/javascript" src="../../../js/Frameworks/iuapmobile.frameworks.listview.js"></script>
+	</head>
+	<body>
+		<div class="um-page um-bgc-gray">
+			<div class="um-header um-common-header" id="pageHeader">
+				<a href="#" onclick="getMessToSubmite()" class="um-header-left ti-angle-left" style="color:#fff;">返回</a>
+				<h3 class="um-common-ht3">快捷功能设置</h3>
+				<a href="#" onclick="callTell()" class="um-header-right  um-top-common iconfont um-index-dianhua">&#xe601;</a>
+				<a href="#" onclick="getSenderMess()" class="um-header-right iconfont um-index-dianhua">&#xe605;</a>
+			</div>
+ 
+			<div class="um-content pt10">
+					<ul class="gxx-list"  data-bind="foreach:data" id="applistviews">
+						<li class="um-list-item">
+							<div class="um-list-item-media">
+								<img data-bind="attr:{src:imgPath==''?'':'../'+imgPath}" width='45px' class="um-round" alt="">
+							</div>
+							<div class="um-list-item-inner">
+								<div class="um-list-item-body" style="line-height: 28px">
+									<span class="f14" data-bind="text:name"></span>
+								</div>
+								<div class="um-list-item-right">
+									<label class="um-switch1">
+										<input type="checkbox" data-bind="attr:{id:appCode,checked:appstate=='on'}" name="codes" >
+										<div class="um-track" style="height:28px">
+											<div class="um-handle" style="top:1px"></div>
+										</div> </label>
+								</div>
+							</div>
+						</li>
+					</ul>
+					</div>	
+		</div>
+	</body>
+	<script src="../../../js/main/appTabOperations.js"></script>
+	<!--
+	<script>
+	var AppModelOperation = function() {};
+	var appModelOperation = new AppModelOperation();
+	var jsonArray = [{
+		"name" : "行邮物品常见问题",
+		"appCode" : "xinxifabu",
+		"imgPath" : "../../img/index_xywpcjwt.png",
+		"linkUrl" : "html/main/zhengcefagui/zhengcefagui.html?itemFlag=1",
+		"appstate" : "on",
+		"lastMsg" : "及时发布海关令、海关公告等内容"
+	}, {
+		"name" : "个人税款模拟器",
+		"appCode" : "tongguancanshu",
+		"imgPath" : "../../img/index_gerenshuikuanmoniqi.png",
+		"linkUrl" : "html/main/tongguancanshu/tongguancanshu_new.html",
+		"appstate" : "on",
+		"lastMsg" : "提供监管方式代码、征免性质代码、国别(地区)代码、币值代码等内容的查询。"
+	}, {
+		"name" : "在线咨询",
+		"appCode" : "haiguanrexian",
+		"imgPath" : "../../img/index_zaixianzixxun.png",
+		"linkUrl" : "html/main/jigoudianhua/jigoudianhua.html?typeFlag=hotline",
+		"appstate" :"on",
+		"lastMsg" : "各直属海关名称、热线电话等内容。"
+	}];
+	summerready = function() {	
+		
+		appModelOperation.data = ko.observableArray(jsonArray);
+		ko.applyBindings(appModelOperation, document.getElementById("applistview"));
+	}
+	</script>
+	-->
+</html>

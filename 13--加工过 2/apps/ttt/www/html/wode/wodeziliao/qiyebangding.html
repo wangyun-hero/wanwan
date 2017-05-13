@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../../css/resetmaingxx.css">
+		<link rel="stylesheet" href="../../../css/gxxmain.css">
+		<link rel="stylesheet" href="../../../css/iuapmobile.um-2.7.0.css">
+		<link rel="stylesheet" href="../../../css/font-icons.css">
+		<link rel="stylesheet" href="../../../css/iconfont.css">
+		<link rel="stylesheet" href="../../../css/common.css">
+		<script src="../../../js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+		<script src="../../../js/summer.js" ></script>
+		<script src="../../../js/jquery-2.1.4.min.js" ></script>
+		<script src="../../../js/mobiscroll.custom-3.0.0.min.js" ></script>
+		<script src="../../../js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+		<script type="text/javascript" src="../../../js/jquery-mvalidate.js"></script>
+	</head>
+	<body>
+		<div class="um-page um-bgc-gray">
+			<div id="pageHeader" class="um-header um-common-header" style="color:#FFFFFF;position: relative;background-image: url('../../../img/logo.png');background-repeat:no-repeat; background-size: 58px 35px;background-position:50% 90%;">
+				<a href="#" onclick="api.closeWin()" class="um-header-left ti-angle-left" style="color:#fff;">我的资料</a>
+				<h3 style="opacity:0;">标题</h3>
+				<a href="#" onclick="callTell()" class="um-header-right  um-top-common iconfont um-index-dianhua">&#xe601;</a>
+				<a href="#" onclick="getSenderMess()" class="um-header-right iconfont um-index-dianhua">&#xe605;</a>
+			</div>
+
+			<div class="um-content">
+				<div class="gxx-qiyebangding">
+				<form id="editQiyeForm" onsubmit="return false;">			
+					<div>
+						<h6 class="gxx-h6">企业名称</h6>
+						<div class="pr">
+							<input id="comname" type="text" placeholder="" class="form-control" />
+							<span class="um-input-clear ti-close" onclick="clearTxt()"></span>
+						</div>
+					</div>
+					<div>
+						<h6 class="gxx-h6" style="margin-top:5%;">用户类型</h6>
+						<div class="pr">
+							<select name="" id="moldvalue" class="select form-control" >
+								<option value="0">个人用户</option>
+								<option value="1">绑卡企业用户</option>
+								<option value="2">非绑卡企业用户</option>
+								<option value="3">绑卡部委用户 </option>
+								<option value="4">非绑卡部委用户</option>
+							</select>
+							<span class="ti-angle-down select-icon"></span>
+						</div>
+					</div>
+					<div>
+						<h6 class="gxx-h6" style="margin-top:5%;">企业机构代码</h6>
+						<div class="pr">
+							<input id="comcode" type="text" placeholder="" class="form-control"/>
+							<span class="um-input-clear ti-close" onclick="clearTxt()"></span>
+						</div>
+
+					</div>
+					<div class="mt40 btnCon tc">
+						<a href="#" class="btn btn-blue">确定</a>
+					</div>
+					
+				</form>
+				</div>
+			</div>
+
+		</div>
+		<script src="../../../js/wode/wodeziliao/qiyebangding.js" ></script>
+	</body>
+</html>

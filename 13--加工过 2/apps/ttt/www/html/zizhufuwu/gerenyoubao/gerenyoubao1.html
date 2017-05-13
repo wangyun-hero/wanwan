@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title>个人邮包查询</title>
+		<link rel="stylesheet" href="../../../css/resetmaingxx.css">
+		<link rel="stylesheet" href="../../../css/gxxmain.css">
+		<link rel="stylesheet" href="../../../css/iuapmobile.um-2.7.0.css">
+		<link rel="stylesheet" href="../../../css/font-icons.css">
+		<link rel="stylesheet" href="../../../css/iconfont.css">
+		<link rel="stylesheet" href="../../../css/common.css">
+		<script src="../../../js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+		<script src="../../../js/summer.js" ></script>
+		<script src="../../../js/jquery-2.1.4.min.js" ></script>
+		<script src="../../../js/Frameworks/iuapmobile.frameworks.ui.js" ></script>
+		<script src="../../../js/knockout-2.2.0.js" ></script>
+		<script src="../../../js/Frameworks/iuapmobile.frameworks.listview.js" ></script>
+		<script src="../../../js/zizhufuwu/gerenyoubao/gerenyoubao.js"></script>
+	</head>
+	<body>
+
+		<div class="um-page active" id="page1">
+			<!-- top--头部 -->
+			<div id="pageHeader1" class="um-header um-common-header um-white">
+				<a href="#" onclick="api.closeWin()" class="um-header-left ti-angle-left" style="color:#fff;">返回</a>
+				<h3>个人邮包查询</h3>
+				<a href="#" onclick="callTell()" class="um-header-right  um-top-common iconfont um-index-dianhua">&#xe601;</a>
+				<a href="#" onclick="getSenderMess()" class="um-header-right iconfont um-index-dianhua">&#xe605;</a>
+			</div>
+
+			<div class="um-content">
+				<div style="width:80px;height:80px;margin:0 auto;margin-top:10%;">
+					<img src="../../../img/index_gerenyoubaochaxun.png" style="width:100%;height:100%"/>
+				</div>
+				<p class="f12" style="margin-top:3%;text-align:center;color:#7F7F7F">
+					*查询可能需要一定 的时间，请您耐心等待
+				</p>
+				<div class="" style="margin-top:16%;position:relative;">
+					<input id="youbao_input" class="form-control" style="width:100%;font-size:14px" type="text" placeholder="请输入邮件号（XX123456789XX）">
+				</div>				
+				<div class="btnCon mt40 mb0">
+					<a class="btn" id='search_btn'>查 询</a>
+				</div>
+				<div class="friendTip">
+					<p class="f14" style="padding-top:4%;">
+						友情提示：
+					</p>
+					<p class="f12" style="padding-bottom:4%;">
+						目前已开通邮包查询的关区为北京、广州。
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="um-page" id="page2">
+			<div id="pageHeader2" class="um-header um-common-header um-white">
+				<a href="#" onclick="api.closeWin()" class="um-header-left ti-angle-left" style="color:#fff;">返回</a>
+				<h3>个人邮包查询</h3>
+				<a href="#" onclick="callTell()" class="um-header-right  um-top-common iconfont um-index-dianhua">&#xe601;</a>
+				<a href="#" onclick="getSenderMess()" class="um-header-right iconfont um-index-dianhua">&#xe605;</a>
+			</div>
+
+			<div class="um-content" style="background:#fff;padding:0;">
+				<div id="anmain">
+					<div style="width:80px;height:80px;margin:0 auto;margin-top:10%;">
+						<img src="../../../img/index_gerenyoubaochaxun.png" style="width:100%;height:100%"/>
+					</div>
+					<div class="showCont">
+						<div class="triangle"></div>
+						<div class="showContul">
+							
+								<p>
+									<em>邮件号</em><span>EA124027898BE</span>
+								</p>
+								<p>
+									<em>进出口方式</em><span>进口</span>
+								</p>
+								<p>
+									<em>国别地区</em><span>--</span>
+								</p>
+								<p>
+									<em>邮包所在海关</em><span>北京海关</span>
+								</p>
+								<p>
+									<em>邮包所在 现场</em><span>监管 一科（通关科）</span>
+								</p>
+								<p>
+									<em>邮件状态</em><span>待放行</span>
+								</p>
+								<p>
+									<em style="line-height: initial">税款总额<br>(人民币：元)</em><span>570</span>
+								</p>
+							
+								<p>
+									<em>更新时间</em><span>2016-11-17 12:15:45</span>
+								</p>
+						</div>
+					</div>
+				<div class="btnCon mt40 mb20">
+					<a class="btn" id='backP1'>返 回</a>
+				</div>
+				</div>
+			</div>
+		</div>
+		<div class="um-page" id="page3">
+			<div id="pageHeader3" class="um-header um-common-header um-white">
+				<a href="#" onclick="api.closeWin()" class="um-header-left ti-angle-left" style="color:#fff;">返回</a>
+				<h3>个人邮包查询</h3>
+				<a href="#" onclick="callTell()" class="um-header-right  um-top-common iconfont um-index-dianhua">&#xe601;</a>
+				<a href="#" onclick="getSenderMess()" class="um-header-right iconfont um-index-dianhua">&#xe605;</a>
+			</div>
+			<div class="um-content" style="background:#fff;">
+				<div style="width:80px;margin:0 auto;margin-top:10%;">
+					<img src="../../../img/zizhufuwu_geren_gerenyoubao_none.png" style="width:100%;height:100%"/>
+				</div>
+				<p class="f12 tc" style="margin-top:3%">
+					对不起，没有查询到结果
+				</p>
+				<div class="youbao_tip f12">
+					<p>
+						请核对您输入的邮件号。
+					</p>
+					<p>
+						邮件未送交海关或已被放行，请联系您的承运人。
+					</p>
+					<p>
+						如有其它问题，可联系12360海关服务热线。
+					</p>
+				</div>
+				
+				<div class="btnCon mt40 mb0">
+					<a class="btn" id='backP2'>返 回</a>
+				</div>
+				
+			</div>
+		</div>
+	</body>
+</html>
